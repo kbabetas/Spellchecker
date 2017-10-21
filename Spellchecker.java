@@ -17,7 +17,7 @@ public class Spellchecker {
 
         	String keimeno = getGreekInput();           /* Κάλεσμα μεθόδου getGreekInput */
 
-		String[] Pinakas = keimeno.split(" ");   /* Σπάσιμο του String που έδωσε ο χρήστης σε επιμέρους λέξεις */
+		String[] Pinakas = keimeno.split("[^α-ωΑ-Ω]+");   /* Σπάσιμο του String που έδωσε ο χρήστης σε επιμέρους λέξεις */
 
 		  
 		printArray(Pinakas);
