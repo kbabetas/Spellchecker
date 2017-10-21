@@ -12,18 +12,16 @@ public class Spellchecker {
 
 	    Scanner input = new Scanner(System.in);
 
-		System.out.println("Δώσε κείμενο και θα σου πω άμα είναι ορθογραφικά σωστό\n\n");
+		System.out.println("Ξ”ΟΟƒΞµ ΞΊΞµΞ―ΞΌΞµΞ½ΞΏ ΞΊΞ±ΞΉ ΞΈΞ± ΟƒΞΏΟ… Ο€Ο‰ Ξ¬ΞΌΞ± ΞµΞ―Ξ½Ξ±ΞΉ ΞΏΟΞΈΞΏΞ³ΟΞ±Ο†ΞΉΞΊΞ¬ ΟƒΟ‰ΟƒΟ„Ο\n\n");
 
 
-        String keimeno = getGreekInput();           /* Κάλεσμα μεθόδου getGreekInput */
+        String keimeno = getGreekInput();           /* ΞΞ¬Ξ»ΞµΟƒΞΌΞ± ΞΌΞµΞΈΟΞ΄ΞΏΟ… getGreekInput */
 
-		String[] Pinakas = keimeno.split(" ");  /* Σπάσιμο του String που έδωσε ο χρήστης σε επιμέρους λέξεις */
+		String[] Pinakas = keimeno.split(" ");   /* Ξ£Ο€Ξ¬ΟƒΞΉΞΌΞΏ Ο„ΞΏΟ… String Ο€ΞΏΟ… Ξ­Ξ΄Ο‰ΟƒΞµ ΞΏ Ο‡ΟΞ®ΟƒΟ„Ξ·Ο‚ ΟƒΞµ ΞµΟ€ΞΉΞΌΞ­ΟΞΏΟ…Ο‚ Ξ»Ξ­ΞΎΞµΞΉΟ‚ */
 
-		for  (int i=0 ; i< Pinakas.length;i ++) {
-			System.out.println("\n");            /* Κενά */
-			System.out.println(Pinakas[i]);      /* Εκτύπωση του πίνακα */
-            System.out.println("\n");            /* Κενά */
-		}
+		  
+		printArray(Pinakas);
+
 
 
 
@@ -35,16 +33,26 @@ public class Spellchecker {
 
 
 	}
-	private static String getGreekInput() {    /* Μέθοδος που σου επιτρέπει να διαβάζεις Strings στα ελληνικά */
+	private static String getGreekInput() {    /* ΞΞ­ΞΈΞΏΞ΄ΞΏΟ‚ Ο€ΞΏΟ… ΟƒΞΏΟ… ΞµΟ€ΞΉΟ„ΟΞ­Ο€ΞµΞΉ Ξ½Ξ± Ξ΄ΞΉΞ±Ξ²Ξ¬Ξ¶ΞµΞΉΟ‚ Strings ΟƒΟ„Ξ± ΞµΞ»Ξ»Ξ·Ξ½ΞΉΞΊΞ¬ */
+	        System.out.flush();          /* ΞΞ±ΞΈΞ±ΟΞ―Ξ¶ΞµΞΉ Ο„Ξ· ΞΌΞ½Ξ®ΞΌΞ·  */
 
-	        System.out.flush();          /* Καθαρίζει τη μνήμη  */
-
-	        try {                       /* Χειρισμός εξαίρεσης  */
-	            BufferedReader in = new BufferedReader(new InputStreamReader(System.in, "cp737"));    /* Η διαδικασία μετατροπής στα ελληνικά*/
+	        try {                       
+	            BufferedReader in = new BufferedReader(new InputStreamReader(System.in, "cp737"));    /* Ξ§ΞµΞΉΟΞΉΟƒΞΌΟΟ‚ ΞµΞΎΞ±Ξ―ΟΞµΟƒΞ·Ο‚  */
 	            return in.readLine();
 	        } catch (Exception e) {
 	            return "Error: " + e.getMessage();
 	        }
+
+	private static void printArray(String[] pinakas) {    /* ΞΞ­ΞΈΞΏΞ΄ΞΏΟ‚ Ο€ΞΏΟ… ΟƒΞΏΟ… ΞµΟ€ΞΉΟ„ΟΞ­Ο€ΞµΞΉ Ξ½Ξ± Ξ΄ΞΉΞ±Ξ²Ξ¬Ξ¶ΞµΞΉΟ‚ Strings ΟƒΟ„Ξ± ΞµΞ»Ξ»Ξ·Ξ½ΞΉΞΊΞ¬ */
+
+		  for  (int i=0 ; i< pinakas.length;i ++) {
+			   	System.out.println("\n");            /* ΞΞµΞ½Ξ¬ */
+			   	System.out.println(pinakas[i]);      /* Ξ•ΞΊΟ„ΟΟ€Ο‰ΟƒΞ· Ο„ΞΏΟ… Ο€Ξ―Ξ½Ξ±ΞΊΞ± */
+            			System.out.println("\n");            /* ΞΞµΞ½Ξ¬ */
+
+   		 }
+
+	}
     }
 
 
