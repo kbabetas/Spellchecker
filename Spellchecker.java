@@ -43,7 +43,7 @@ public class Spellchecker {
 
 	
 	
-	private static void printArray(String[] pinakas) {    /* Μέθοδος που σου επιτρέπει να διαβάζεις Strings στα ελληνικά */
+	private static void printArray(String[] pinakas) {    /* Μέθοδος που εκτυπώνει τον πίνακα στον οποίο έχουν καταχωρηθεί οι λέξεις του String */
 
 		  for  (int i=0 ; i< pinakas.length;i ++) {
 			   	System.out.println("\n");            /* Κενά */
