@@ -10,12 +10,12 @@ public class Spellchecker {
 	public static void main(String args[]) {
 
 
-	    Scanner input = new Scanner(System.in);
+	    	Scanner input = new Scanner(System.in);
 
 		System.out.println("Δώσε κείμενο και θα σου πω άμα είναι ορθογραφικά σωστό\n\n");
 
 
-        String keimeno = getGreekInput();           /* Κάλεσμα μεθόδου getGreekInput */
+        	String keimeno = getGreekInput();           /* Κάλεσμα μεθόδου getGreekInput */
 
 		String[] Pinakas = keimeno.split(" ");   /* Σπάσιμο του String που έδωσε ο χρήστης σε επιμέρους λέξεις */
 
@@ -27,14 +27,11 @@ public class Spellchecker {
 
 
 
-
-
-
-
-
 	}
+	
+	
 	private static String getGreekInput() {    /* Μέθοδος που σου επιτρέπει να διαβάζεις Strings στα ελληνικά */
-	        System.out.flush();          /* Καθαρίζει τη μνήμη  */
+	        System.out.flush();          		/* Καθαρίζει τη μνήμη  */
 
 	        try {                       
 	            BufferedReader in = new BufferedReader(new InputStreamReader(System.in, "cp737"));    /* Χειρισμός εξαίρεσης  */
@@ -42,8 +39,10 @@ public class Spellchecker {
 	        } catch (Exception e) {
 	            return "Error: " + e.getMessage();
 	        }
-	}
+	}  /* Τέλος μεθόδου getGreekInput */
 
+	
+	
 	private static void printArray(String[] pinakas) {    /* Μέθοδος που σου επιτρέπει να διαβάζεις Strings στα ελληνικά */
 
 		  for  (int i=0 ; i< pinakas.length;i ++) {
@@ -53,9 +52,9 @@ public class Spellchecker {
 
    		 }
 
-	}
+	} /* Τέλος μεθόδου printArray */
     
 
 
 
-}
+} /* Τέλος κλάσης */
