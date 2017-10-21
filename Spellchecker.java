@@ -42,6 +42,7 @@ public class Spellchecker {
 	        } catch (Exception e) {
 	            return "Error: " + e.getMessage();
 	        }
+	}
 
 	private static void printArray(String[] pinakas) {    /* Μέθοδος που σου επιτρέπει να διαβάζεις Strings στα ελληνικά */
 
@@ -53,7 +54,7 @@ public class Spellchecker {
    		 }
 
 	}
-    }
+    
 
 
 
