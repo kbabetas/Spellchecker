@@ -55,8 +55,8 @@ public class Spellchecker {
 			    if(pinakas[i] != null) {
 			   	System.out.println("\n");			 /* Κενά */
 			   	System.out.println(pinakas[i]);      /* Εκτύπωση του πίνακα */
-            	System.out.println("\n");            /* Κενά */
-				}
+            	  		System.out.println("\n");            /* Κενά */
+			    }
 
    		 }
 
