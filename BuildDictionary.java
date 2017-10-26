@@ -1,30 +1,29 @@
-
-import java.util.ArrayList;
+import java.util.Map;
+import java.util.TreeMap;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-/* Μετατρέπει το λεξικό μας (Dictionary.txt) σε μια ArrayList με όνομα dictionary */
+/* Μετατρέπει το λεξικό μας (Dictionary.txt) σε ένα treemap με όνομα dictionary */
 
 public class BuildDictionary {
 	
 	public static void main(String[] args) {
 		
-		ArrayList<String> dictionary = new ArrayList<String>();
+		Map<Integer, String> dictionary = new TreeMap<Integer, String>();
 		try {
 			BufferedReader reader = new BufferedReader(new FileReader("Dictionary.txt")); /* Dictionary.txt should be on the same folder  */ 
             String word;
+            int key = 0;
             while ((word = reader.readLine()) != null) {
-                dictionary.add(word);
+            	dictionary.put(key, word);
+            	key++;
             }
         } catch (IOException ioe) {
            ioe.printStackTrace();
         }
-			
+		
 	}
 
 }
-
-
-
 	
