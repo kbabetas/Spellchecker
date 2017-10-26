@@ -12,16 +12,15 @@ public class BuildDictionary {
 		
 		ArrayList<String> dictionary = new ArrayList<String>();
 		try {
-			BufferedReader reader = new BufferedReader(new FileReader("C:/Users/kobos/Documents/GitHub/JAVA/Dictionary.txt")); // Εδώ βάλτε
-			//το αντίστοιχο δικό σας path για να δουλέψει και θα δούμε πως θα το φτιάξουμε στη συνέχεια
+			BufferedReader reader = new BufferedReader(new FileReader("Dictionary.txt")); /* Dictionary.txt should be on the same folder  */ 
             String word;
             while ((word = reader.readLine()) != null) {
                 dictionary.add(word);
             }
         } catch (IOException ioe) {
-            ioe.printStackTrace();
-		}
-		
+           ioe.printStackTrace();
+        }
+			
 	}
 
 }
