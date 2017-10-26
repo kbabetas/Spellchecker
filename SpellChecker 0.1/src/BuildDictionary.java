@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-/* Μετατρέπει το λεξικό μας (Dictionary.txt) σε ένα treemap με όνομα dictionary */
+/* Μετατρέπει το λεξικό (Dictionary.txt) σε ένα treemap με όνομα dictionary */
 
 	
 public static void buildDictionary() {
