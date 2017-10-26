@@ -14,20 +14,19 @@ public class Spellchecker {
 
 	    	Scanner input = new Scanner(System.in);
 
-			System.out.println("Δώσε κείμενο και θα σου πω άμα είναι ορθογραφικά σωστό\n\n");
+		System.out.println("Δώσε κείμενο και θα σου πω άμα είναι ορθογραφικά σωστό\n\n");
 
 
-        	String keimeno = getGreekInput();           			/* Κάλεσμα μεθόδου getGreekInput */
+        	String keimeno = getGreekInput();           		/* Κάλεσμα μεθόδου getGreekInput */
 
-			String[] Pinakas = keimeno.split("[^α-ωΑ-Ωά-ώ]+"); 		/* Σπάσιμο του String που έδωσε ο χρήστης σε επιμέρους λέξεις */
-			BuildDictionary builder = new BuildDictionary();
-			Map<Integer, String> dictionary = builder.buildDictionary();
-
-
-			printArray(Pinakas);										  /* εκτύπωση των λέξεων που έδωσε ο χρήστης */
+		String[] splittedArray = keimeno.split("[^α-ωΑ-Ωά-ώ]+"); 	/* Σπάσιμο του String που έδωσε ο χρήστης σε επιμέρους λέξεις */
+		BuildDictionary builder = new BuildDictionary();
+		Map<Integer, String> dictionary = builder.buildDictionary();
 
 
-			System.out.println("Οι λάθος λέξεις είναι :\n\n");
+		printArray(splittedArray);				 /* εκτύπωση των λέξεων που έδωσε ο χρήστης */
+
+		System.out.println("Οι λάθος λέξεις είναι :\n\n");
 
 
 
@@ -53,14 +52,14 @@ public class Spellchecker {
 
 
 
-	private static void printArray(String[] pinakas) {    /* Μέθοδος που εκτυπώνει  πίνακα  */
+	private static void printArray(String[] array) {    /* Μέθοδος που εκτυπώνει  πίνακα  */
 
-		  for  (int i=0 ; i< pinakas.length;i ++) {
-			    if(pinakas[i] != null) {
-			   	System.out.println("\n");			 /* Κενά */
-			   	System.out.println(pinakas[i]);      /* Εκτύπωση του πίνακα */
-            	  		System.out.println("\n");            /* Κενά */
-			    }
+		for  (int i=0 ; i< array.length;i ++) {
+			if(array[i] != null) {
+			System.out.println("\n");			 /* Κενά */
+			System.out.println(array[i]);      /* Εκτύπωση του πίνακα */
+            		System.out.println("\n");            /* Κενά */
+			}
 
    		 }
 
@@ -74,13 +73,6 @@ public class Spellchecker {
 			}
 
 			return wrongArray ;   /* Επιστρέφει τον πίνακα με τις λάθος λέξεις */
-
-
-
-
-
-
-
 
 		} /* Τέλος μεθόδου treeSearch */
 
