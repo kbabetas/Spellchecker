@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -7,19 +8,17 @@ import java.util.TreeMap;
 public class Spellchecker {
 
 
-
-
 	public static void main(String args[]) {
 
 
-	    	Scanner input = new Scanner(System.in);
+	    Scanner input = new Scanner(System.in);
 
 		System.out.println("Δώσε κείμενο και θα σου πω άμα είναι ορθογραφικά σωστό\n\n");
 
 
-        	String keimeno = getGreekInput();           		/* Κάλεσμα μεθόδου getGreekInput */
+        String text = getGreekInput();           		/* Κάλεσμα μεθόδου getGreekInput */
 
-		String[] splittedArray = keimeno.split("[^α-ωΑ-Ωά-ώ]+"); 	/* Σπάσιμο του String που έδωσε ο χρήστης σε επιμέρους λέξεις */
+		String[] splittedArray = text.split("[^α-ωΑ-Ωά-ώ]+"); 	/* Σπάσιμο του String που έδωσε ο χρήστης σε επιμέρους λέξεις */
 		BuildDictionary builder = new BuildDictionary();
 		Map<Integer, String> dictionary = builder.buildDictionary();
 
@@ -27,12 +26,6 @@ public class Spellchecker {
 		printArray(splittedArray);				 /* εκτύπωση των λέξεων που έδωσε ο χρήστης */
 
 		System.out.println("Οι λάθος λέξεις είναι :\n\n");
-
-
-
-
-
-
 
 	}
 
@@ -56,7 +49,7 @@ public class Spellchecker {
 
 		for  (int i=0 ; i< array.length;i ++) {
 			if(array[i] != null) {
-			System.out.println("\n");			 /* Κενά */
+			System.out.println();			 /* Κενά */
 			System.out.println(array[i]);      /* Εκτύπωση του πίνακα */
             		System.out.println("\n");            /* Κενά */
 			}
@@ -69,6 +62,7 @@ public class Spellchecker {
 	private static String[] treeSearch(String [] a , Map<Integer, String> dic) { /*  Ανα \ήτηση σε 2 πίνακες,γεμίζοντας έναν τρίτο με τα στοιχεία που δεν είναι κοινά και στους 2 */
 			String[] wrongArray = new String[a.length];
 			for(int i = 0; i < a.length; i++) {
+				
 
 			}
 
