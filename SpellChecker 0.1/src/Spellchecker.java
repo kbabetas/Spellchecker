@@ -19,8 +19,7 @@ public class Spellchecker {
         String text = getGreekInput();           		/* Κάλεσμα μεθόδου getGreekInput */
 
 		String[] splittedArray = text.split("[^α-ωΑ-Ωά-ώ]+"); 	/* Σπάσιμο του String που έδωσε ο χρήστης σε επιμέρους λέξεις */
-		BuildDictionary builder = new BuildDictionary();
-		Map<Integer, String> dictionary = builder.buildDictionary();
+		Map<Integer, String> dictionary = BuildDictionary.buildDictionary();
 
 
 		printArray(splittedArray);				 /* εκτύπωση των λέξεων που έδωσε ο χρήστης */
