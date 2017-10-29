@@ -46,7 +46,7 @@ public class Spellchecker {
 
 	private static void printArray(String[] array) {    /* Μέθοδος που εκτυπώνει  πίνακα  */
 
-		for  (int i=0 ; i< array.length;i ++) {
+	for  (int i=0 ; i< array.length;i ++) {
 			if(array[i] != null) {
 			System.out.println();			 /* Κενά */
 			System.out.println(array[i]);      /* Εκτύπωση του πίνακα */
