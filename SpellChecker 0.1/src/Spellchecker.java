@@ -4,7 +4,9 @@ import java.io.InputStreamReader;
 import java.util.Map;
 import java.util.TreeMap;
 
-/** In this class the user inserts a text that is splitted into words and these words are spell-checked one to one. */ 
+/** In this class the user inserts a text that is splitted into words and these words are spell-checked one to one.
+*   @author Βούγιας,Γεωργούλη,Κακουλάκη,Λαζαρίδη,Λαζαρίδου,Μπαμπέτας,Παυλίδη,Σπέρτου
+*/ 
 public class Spellchecker {
 
 
@@ -24,7 +26,10 @@ public class Spellchecker {
 
 	}
 
-	/** Μέθοδος που σου επιτρέπει να διαβάζεις Strings στα ελληνικά */
+	/** Μέθοδος που σου επιτρέπει να διαβάζεις Strings στα ελληνικά
+	*   @return the greek text that the user inserted
+	*   @throws Exception if the input is wrong.
+	*/
 	private static String getGreekInput() {    
 
 	        System.out.flush();          		/* Καθαρίζει τη μνήμη  */
@@ -54,7 +59,9 @@ public class Spellchecker {
 	} /* Τέλος μεθόδου printArray */
 
 	
-	/**  Αναζήτηση σε 2 πίνακες,γεμίζοντας έναν τρίτο με τα στοιχεία που δεν είναι κοινά και στους 2 */			
+	/**  Αναζήτηση σε 2 πίνακες,γεμίζοντας έναν τρίτο με τα στοιχεία που δεν είναι κοινά και στους 2
+	*   @return the array with the wrong words found; null array if no wrong words are found.
+	*/			
 	private static String[] treeSearch(String [] splittedArray , Map<Integer, String> dictionary) { 
 			String[] wrongArray = new String[a.length];
 			for(int i = 0; i < a.length; i++) {
