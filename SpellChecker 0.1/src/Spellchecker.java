@@ -26,7 +26,7 @@ public class Spellchecker {
 
 	}
 
-	/** Μέθοδος που σου επιτρέπει να διαβάζεις Strings στα ελληνικά
+	/** Μέθοδος που σου επιτρέπει να διαβάζεις Strings στα ελληνικά.
 	*   @return the greek text that the user inserted
 	*   @throws Exception if the input is wrong.
 	*/
@@ -59,7 +59,7 @@ public class Spellchecker {
 	} /* Τέλος μεθόδου printArray */
 
 	
-	/**  Αναζήτηση σε 2 πίνακες,γεμίζοντας έναν τρίτο με τα στοιχεία που δεν είναι κοινά και στους 2
+	/**  Αναζήτηση σε 2 πίνακες,γεμίζοντας έναν τρίτο με τα στοιχεία που δεν είναι κοινά και στους 2.
 	*   @return the array with the wrong words found; null array if no wrong words are found.
 	*/			
 	private static String[] treeSearch(String [] splittedArray , Map<Integer, String> dictionary) { 
