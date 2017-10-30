@@ -4,6 +4,7 @@ import java.io.InputStreamReader;
 import java.util.Map;
 import java.util.TreeMap;
 
+/** In this class the user inserts a text that is splitted into words and these words are spell-checked one to one. */ 
 public class Spellchecker {
 
 
@@ -23,8 +24,8 @@ public class Spellchecker {
 
 	}
 
-
-	private static String getGreekInput() {    /* Μέθοδος που σου επιτρέπει να διαβάζεις Strings στα ελληνικά */
+	/** Μέθοδος που σου επιτρέπει να διαβάζεις Strings στα ελληνικά */
+	private static String getGreekInput() {    
 
 	        System.out.flush();          		/* Καθαρίζει τη μνήμη  */
 
@@ -38,8 +39,8 @@ public class Spellchecker {
 	}  /* Τέλος μεθόδου getGreekInput */
 
 
-
-	private static void printArray(String[] array) {    /* Μέθοδος που εκτυπώνει  πίνακα  */
+	/** Μέθοδος που εκτυπώνει  πίνακα  */
+	private static void printArray(String[] array) {    
 
 		for  (int i=0 ; i< array.length;i ++) {
 			if(array[i] != null) {
@@ -52,8 +53,9 @@ public class Spellchecker {
 
 	} /* Τέλος μεθόδου printArray */
 
-
-	private static String[] treeSearch(String [] splittedArray , Map<Integer, String> dictionary) { /*  Αναζήτηση σε 2 πίνακες,γεμίζοντας έναν τρίτο με τα στοιχεία που δεν είναι κοινά και στους 2 */
+	
+	/**  Αναζήτηση σε 2 πίνακες,γεμίζοντας έναν τρίτο με τα στοιχεία που δεν είναι κοινά και στους 2 */			
+	private static String[] treeSearch(String [] splittedArray , Map<Integer, String> dictionary) { 
 			String[] wrongArray = new String[a.length];
 			for(int i = 0; i < a.length; i++) {
 				
@@ -62,7 +64,7 @@ public class Spellchecker {
 
 			return wrongArray ;   /* Επιστρέφει τον πίνακα με τις λάθος λέξεις */
 
-		} /* Τέλος μεθόδου treeSearch */
+	} /* Τέλος μεθόδου treeSearch */
 
 
 
