@@ -55,7 +55,7 @@ public class Spellchecker {
 	} /* Τέλος μεθόδου printArray */
 
 
-	private static String[] treeSearch(String [] a , Map<Integer, String> dic) { /*  Αναζήτηση σε 2 πίνακες,γεμίζοντας έναν τρίτο με τα στοιχεία που δεν είναι κοινά και στους 2 */
+	private static String[] treeSearch(String [] splittedArray , Map<Integer, String> dictionary) { /*  Αναζήτηση σε 2 πίνακες,γεμίζοντας έναν τρίτο με τα στοιχεία που δεν είναι κοινά και στους 2 */
 			String[] wrongArray = new String[a.length];
 			for(int i = 0; i < a.length; i++) {
 				
