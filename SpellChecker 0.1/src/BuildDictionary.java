@@ -5,6 +5,7 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 
+/** This class converts the txt dictionary to a Treemap */
 public class BuildDictionary {
 
 
