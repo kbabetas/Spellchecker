@@ -10,7 +10,7 @@ public class Spellchecker {
 	public static void main(String args[]) {
 
 
-		Scanner input = new Scanner(System.in);
+	Scanner input = new Scanner(System.in);
 
 		System.out.println("Δώσε κείμενο και θα σου πω άμα είναι ορθογραφικά σωστό\n\n");
 		String text = getGreekInput();           		/* Κάλεσμα μεθόδου getGreekInput */
