@@ -24,7 +24,7 @@ public class BuildDictionary {
             		}
         	} catch (IOException ioe) {
            	ioe.printStackTrace();
-       		   }
+       		}
 
 	return dictionary;
 	}
