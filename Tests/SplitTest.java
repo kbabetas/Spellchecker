@@ -4,13 +4,13 @@ public class SplitTest {
 
 	public static void main (String[] args) {
 
-		String text = "Γεια σας παιδιά!";
+		String text = "Ξ“ΞµΞΉΞ± ΟƒΞ±Ο‚ Ο€Ξ±ΞΉΞ΄ΞΉΞ¬!";
 
-		String[] splittedArray = text.split("[^α-ωΑ-Ωά-ώ]+");
+		String[] splittedArray = text.split("[^Γ΅-ΓΉΓ-Γ™Γ-ΓΎ]+");
 
 		String[] array = splittedArray;
 
-		if (array[0].equals("Γεια")) {
+		if (array[0].equals("Ξ“ΞµΞΉΞ±")) {
 			System.out.println("well done team!");
 		} else {
 			System.out.println("try again");
