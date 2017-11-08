@@ -59,7 +59,7 @@ public class Spellchecker {
 	} /* Τέλος μεθόδου printArray */
 
 	
-	/**  Αναζήτηση σε 2 πίνακες,γεμίζοντας έναν τρίτο με τα στοιχεία που δεν είναι κοινά και στους 2.
+	/** Σύγκριση κάθε λέξης του πίνακα splittedArray με το treeMap που περιέχει το λεξικό, έπειτα γεμίζεται ένας τρίτος με τις λανθασμένες λέξεις.
 	*   @return the array with the wrong words found; null array if no wrong words are found.
 	*/			
 	private static String[] treeSearch(String [] splittedArray , Map<Integer, String> dictionary) { 
