@@ -4,9 +4,11 @@ import java.io.InputStreamReader;
 import java.util.Map;
 import java.util.TreeMap;
 
-/** In this class the user inserts a text that is splitted into words and these words are spell-checked one to one.
-*   @author Βούγιας,Γεωργούλη,Κακουλάκη,Λαζαρίδη,Λαζαρίδου,Μπαμπέτας,Παυλίδη,Σπέρτου
-*/ 
+/** 
+  *	In this class the user inserts a text that is splitted into words and these words are spell-checked one to one.
+  *	if a wrong word exists, it is inserted in an array.
+  *	@author Βούγιας,Γεωργούλη,Κακουλάκη,Λαζαρίδη,Λαζαρίδου,Μπαμπέτας,Παυλίδη,Σπέρτου
+  */ 
 public class Spellchecker {
 
 
@@ -26,10 +28,11 @@ public class Spellchecker {
 
 	}
 
-	/** Μέθοδος που σου επιτρέπει να διαβάζεις Strings στα ελληνικά.
-	*   @return the greek text that the user inserted
-	*   @throws Exception if the input is wrong.
-	*/
+	/**
+	  *	Μέθοδος που σου επιτρέπει να διαβάζεις Strings στα ελληνικά.
+	  *	@return the greek text that the user inserted
+	  *	@throws Exception if the input is wrong.
+	  */
 	private static String getGreekInput() {    
 
 	        System.out.flush();          		/* Καθαρίζει τη μνήμη  */
@@ -44,7 +47,9 @@ public class Spellchecker {
 	}  /* Τέλος μεθόδου getGreekInput */
 
 
-	/** Μέθοδος που εκτυπώνει  πίνακα  */
+	/**
+	  *	Μέθοδος που εκτυπώνει  πίνακα
+	  */
 	private static void printArray(String[] array) {    
 
 		for  (int i=0 ; i< array.length;i ++) {
@@ -59,9 +64,11 @@ public class Spellchecker {
 	} /* Τέλος μεθόδου printArray */
 
 	
-	/** Σύγκριση κάθε λέξης του πίνακα splittedArray με το treeMap που περιέχει το λεξικό, έπειτα γεμίζεται ένας τρίτος με τις λανθασμένες λέξεις.
-	*   @return the array with the wrong words found; null array if no wrong words are found.
-	*/			
+	/** 
+	  *	Σύγκριση κάθε λέξης του πίνακα splittedArray με το treeMap που περιέχει το λεξικό, 
+	  *	έπειτα γεμίζεται ένας τρίτος με τις λανθασμένες λέξεις.
+	  *	@return the array with the wrong words found; null array if no wrong words are found.
+	  */			
 	private static String[] treeSearch(String [] splittedArray , Map<Integer, String> dictionary) { 
 			String[] wrongArray = new String[a.length];
 			for(int i = 0; i < a.length; i++) {
