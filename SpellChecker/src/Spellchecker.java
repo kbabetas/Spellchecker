@@ -93,6 +93,24 @@ public class Spellchecker {
 				System.out.println(wrongArray[i]);
 			        }
 			 }
+		
+		
+		if (splittedArray[0].equals(splittedArray[0].toLowerCase()) && (!wrongArray[0].equals(splittedArray[0]))) {
+				if (splittedArray.length==1) {
+					 wrongArray[0] = splittedArray[0];
+				} else {
+				 	 wrongArray[index+1] = splittedArray[0];
+		   	    }
+
+
+		   }
+
+		if (wrongArray[0].equals(splittedArray[0])) {
+			String first = wrongArray[0].toLowerCase();
+			if (dictionary.containsKey(first) == true) {
+		   		 wrongArray[0]=null;
+			}
+		}
 		return wrongArray ;
 
 			
