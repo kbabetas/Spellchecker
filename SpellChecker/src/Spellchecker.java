@@ -81,7 +81,7 @@ public class Spellchecker {
 	  */			
 	private static String[] treeSearch(String [] splittedArray , Map<Integer, String> dictionary) {
 		
-		String[] wrongArray = new String[splittedArray.length];
+		String[] wrongArray = new String[splittedArray.length+1];
 		int k = 0;
 		
 		for(int i = 0; i < splittedArray.length; i++) {
@@ -95,6 +95,15 @@ public class Spellchecker {
 							
 				}
 			}
+		}
+		if (splittedArray[0].equals(splittedArray[0].toLowerCase()) && (!wrongArray[0].equals(splittedArray[0]))) {
+			if (splittedArray.length==1) {
+					 wrongArray[0] = splittedArray[0];
+			} else {
+					wrongArray[k+1] = splittedArray[0];
+			}
+
+
 		}
 
 		return wrongArray ;
