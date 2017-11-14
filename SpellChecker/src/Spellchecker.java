@@ -78,20 +78,26 @@ public class Spellchecker {
 
 				if(!dictionary.containsValue(splittedArray[i])){
 
-							wrongArray[k] = splittedArray[i];
-							k++ ;
-				
+					
+					if(!dictionary.containsValue(splittedArray[i].toLowerCase() )) {
+						wrongArray[k] = splittedArray[i];
+						k++ ;
+							
+					}
 				}
-
-
 			}
 
 
+			for (int i=0; i<wrongArray.length; i++) {
+				if (wrongArray[i]!= null ) {
+				System.out.println(wrongArray[i]);
+			        }
+			 }
+		return wrongArray ;
+
 			
-			return wrongArray ;
-
-
-	} /* Τέλος μεθόδου treeSearch */
+				
+       } /* Τέλος μεθόδου treeSearch */
 
 
 
