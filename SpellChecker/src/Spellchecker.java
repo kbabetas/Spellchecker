@@ -16,15 +16,25 @@ public class Spellchecker {
 
 
 		System.out.println("Δώσε κείμενο και θα σου πω άμα είναι ορθογραφικά σωστό\n\n");
+		
 		String text = getGreekInput();           		/* Κάλεσμα μεθόδου getGreekInput */
-
-		String[] splittedArray = text.split("[^α-ωΑ-Ωά-ώ]+"); 	/* Σπάσιμο του String που έδωσε ο χρήστης σε επιμέρους λέξεις */
+		
+		System.out.printf("\n");
+		
+		String[] splittedArray = text.split(""[^a-zA-Zα-ωΑ-Ωά-ώΐ]+""); 	/* Σπάσιμο του String που έδωσε ο χρήστης σε επιμέρους λέξεις */
+		
 		Map<Integer, String> dictionary = BuildDictionary.buildDictionary();
-
-
+		
 		printArray(splittedArray);				 /* εκτύπωση των λέξεων που έδωσε ο χρήστης */
-
+		
+		String[] wrongwords = treeSearch(splittedArray,dictionary);
+		
+		System.out.printf("\n");
+		
 		System.out.println("Οι λάθος λέξεις είναι :\n\n");
+		
+		printArray(wrongwords);
+		
 
 	}
 
@@ -74,43 +84,19 @@ public class Spellchecker {
 		String[] wrongArray = new String[splittedArray.length];
 		int k = 0;
 		
-			for(int i = 0; i < splittedArray.length; i++) {
+		for(int i = 0; i < splittedArray.length; i++) {
 
-				if(!dictionary.containsValue(splittedArray[i])){
+			if(!dictionary.containsValue(splittedArray[i])){
 
 					
-					if(!dictionary.containsValue(splittedArray[i].toLowerCase() )) {
-						wrongArray[k] = splittedArray[i];
-						k++ ;
+				if(!dictionary.containsValue(splittedArray[i].toLowerCase() )) {
+					wrongArray[k] = splittedArray[i];
+					k++ ;
 							
-					}
 				}
 			}
-
-
-			for (int i=0; i<wrongArray.length; i++) {
-				if (wrongArray[i]!= null ) {
-				System.out.println(wrongArray[i]);
-			        }
-			 }
-		
-		
-		if (splittedArray[0].equals(splittedArray[0].toLowerCase()) && (!wrongArray[0].equals(splittedArray[0]))) {
-				if (splittedArray.length==1) {
-					 wrongArray[0] = splittedArray[0];
-				} else {
-				 	 wrongArray[index+1] = splittedArray[0];
-		   	    }
-
-
-		   }
-
-		if (wrongArray[0].equals(splittedArray[0])) {
-			String first = wrongArray[0].toLowerCase();
-			if (dictionary.containsKey(first) == true) {
-		   		 wrongArray[0]=null;
-			}
 		}
+
 		return wrongArray ;
 
 			
