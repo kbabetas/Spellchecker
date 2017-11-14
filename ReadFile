@@ -1,0 +1,73 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+/**
+ * This class reads a text file and creates an array with the lines of the text file.
+ * @author Marinina
+ *
+ */
+public class ReadFile {
+	
+
+	private String path;
+
+	/**
+	 * Constructor that initiates path
+	 * @param file_path 
+	 */
+	public ReadFile(String filePath) {
+		path = filePath;
+	}
+	
+	/**
+	 * This method returns all the lines of code from the text file
+	 * then these lines will be held in the array textData.
+	 * @return a String array with the lines of the text file.
+	 * @throws IOException will throw errors in the line.
+	 */
+	public String[] OpenFile() throws IOException {
+		
+		FileReader fr = new FileReader(path);
+		BufferedReader textReader = new BufferedReader(fr);
+	
+		int numberOfLines = calculateLines();
+	    String[] textData = new String[numberOfLines]; //each position in textData array can hold one line of text.
+	
+	    for (int i=0; i< numberOfLines; i++) {
+	    	textData[i] = textReader.readLine();
+	    	
+	    }
+	    
+	    textReader.close();
+	    return textData;
+	
+	
+	}
+	
+	/**
+	 * This method calculates the number of lines of a text file.
+	 * @return returns the number of lines of a text file.
+	 * @throws IOException
+	 */
+	public int calculateLines() throws IOException{
+		
+		
+		FileReader fr = new FileReader(path);
+		BufferedReader textReader = new BufferedReader(fr);
+		
+		
+		int numberOfLines = 0;
+		
+		while ( textReader.readLine()  != null ) {
+			numberOfLines++ ;
+		}
+		
+		textReader.close();
+		
+		return numberOfLines;
+	}
+	
+	
+	
+}
