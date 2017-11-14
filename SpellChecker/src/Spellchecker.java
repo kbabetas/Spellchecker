@@ -69,14 +69,27 @@ public class Spellchecker {
 	  *	έπειτα γεμίζεται ένας τρίτος με τις λανθασμένες λέξεις.
 	  *	@return the array with the wrong words found; null array if no wrong words are found.
 	  */			
-	private static String[] treeSearch(String [] splittedArray , Map<Integer, String> dictionary) { 
-			String[] wrongArray = new String[a.length];
-			for(int i = 0; i < a.length; i++) {
+	private static String[] treeSearch(String [] splittedArray , Map<Integer, String> dictionary) {
+		
+		String[] wrongArray = new String[splittedArray.length];
+		int k = 0;
+		
+			for(int i = 0; i < splittedArray.length; i++) {
+
+				if(!dictionary.containsValue(splittedArray[i])){
+
+							wrongArray[k] = splittedArray[i];
+							k++ ;
 				
+				}
+
 
 			}
 
-			return wrongArray ;   /* Επιστρέφει τον πίνακα με τις λάθος λέξεις */
+
+			
+			return wrongArray ;
+
 
 	} /* Τέλος μεθόδου treeSearch */
 
