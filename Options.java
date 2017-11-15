@@ -49,7 +49,7 @@ public static int LevenshteinDistance( String s1, String s2) {
 
 public static double similarity(String s1, String s2) {
  int d = LevenshteinDistance(s1,s2);
- double sim = (Math.max(s1.length(), s2.length())- d) / (double)(Math.max(s1.length(), s2.length()));
+ double sim = (double)(((s1.length() + s2.length()) -d)/(double)(s1.length() + s2.length())*100);
  return sim;
  }
 
