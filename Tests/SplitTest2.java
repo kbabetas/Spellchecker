@@ -5,13 +5,13 @@ public class SplitTest2 {
 
 	public static void main (String[] args) {
 
-		String text = "δοκιμή με    κενό";
+		String text = "Ξ”ΞΏΞΊΞΉΞΌΞ® ΞΌΞµ    ΞΊΞµΞ½Ο";
 
-		String[] splittedArray = text.split("[^α-ωΑ-Ωά-ώ]+");
+		String[] splittedArray = text.split("[^Γ΅-ΓΉΓ-Γ™Γ-ΓΎ]+");
 
 		String[] array = splittedArray;
 
-		if (array[2].equals("κενό")) {
+		if (array[2].equals("ΞΊΞµΞ½Ο")) {
 			System.out.println("well done team!");
 			System.out.println("To programma douleuei osa kena kai na exei anamesa stis le3eis");
 		} else {
