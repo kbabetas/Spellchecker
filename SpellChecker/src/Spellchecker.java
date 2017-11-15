@@ -15,7 +15,9 @@ public class Spellchecker {
 	public static void main(String args[]) {
 
 
-		System.out.println("Δώσε κείμενο και θα σου πω άμα είναι ορθογραφικά σωστό\n\n");
+		
+		int choice = getMenu();
+
 		
 		String text = getGreekInput();           		/* Κάλεσμα μεθόδου getGreekInput */
 		
