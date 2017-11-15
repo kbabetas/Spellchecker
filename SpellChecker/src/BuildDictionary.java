@@ -14,7 +14,7 @@ public class BuildDictionary {
 		Map<Integer, String> dictionary = new TreeMap<Integer, String>();
 		try {
 
-			BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream("Dictionary.txt"),"cp737")); /* Dictionary.txt should be on the same folder  */
+			BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream("Dictionary.txt"),"UTF-8")); /* Dictionary.txt should be on the same folder  */
 
             		String word;
             		int key = 0;

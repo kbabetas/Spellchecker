@@ -16,15 +16,25 @@ public class Spellchecker {
 
 
 		System.out.println("Δώσε κείμενο και θα σου πω άμα είναι ορθογραφικά σωστό\n\n");
+		
 		String text = getGreekInput();           		/* Κάλεσμα μεθόδου getGreekInput */
-
-		String[] splittedArray = text.split("[^α-ωΑ-Ωά-ώ]+"); 	/* Σπάσιμο του String που έδωσε ο χρήστης σε επιμέρους λέξεις */
+		
+		System.out.printf("\n");
+		
+		String[] words = text.split("[^a-zA-Zα-ωΑ-Ωά-ώΐ]+"); 	/* Σπάσιμο του String που έδωσε ο χρήστης σε επιμέρους λέξεις */
+		
 		Map<Integer, String> dictionary = BuildDictionary.buildDictionary();
-
-
-		printArray(splittedArray);				 /* εκτύπωση των λέξεων που έδωσε ο χρήστης */
-
+		
+		printArray(words);				 /* εκτύπωση των λέξεων που έδωσε ο χρήστης */
+		
+		String[] wrongwords = treeSearch(words,dictionary);   /* αναζήτηση στο treemap */
+		
+		System.out.printf("\n");				
+		
 		System.out.println("Οι λάθος λέξεις είναι :\n\n");
+		
+		printArray(wrongwords);					/* εκτύπωση λέξεων με ορθογραφικά λάθη */
+		
 
 	}
 
@@ -69,16 +79,30 @@ public class Spellchecker {
 	  *	έπειτα γεμίζεται ένας τρίτος με τις λανθασμένες λέξεις.
 	  *	@return the array with the wrong words found; null array if no wrong words are found.
 	  */			
-	private static String[] treeSearch(String [] splittedArray , Map<Integer, String> dictionary) { 
-			String[] wrongArray = new String[a.length];
-			for(int i = 0; i < a.length; i++) {
-				
+	private static String[] treeSearch(String [] words , Map<Integer, String> dictionary) {
+		
+		String[] wrongArray = new String[words.length];
+		int k = 0;
+		
+		for(int i = 0; i < words.length; i++) {
 
+			if(!dictionary.containsValue(words[i])){
+
+					
+				if(!dictionary.containsValue(words[i].toLowerCase() )) {
+					wrongArray[k] = words[i];
+					k++ ;
+							
+				}
 			}
+		}
+		
 
-			return wrongArray ;   /* Επιστρέφει τον πίνακα με τις λάθος λέξεις */
+		return wrongArray ;
 
-	} /* Τέλος μεθόδου treeSearch */
+			
+				
+       } /* Τέλος μεθόδου treeSearch */
 
 
 
