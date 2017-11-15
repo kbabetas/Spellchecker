@@ -10,6 +10,8 @@ import java.util.TreeMap;
   *	@author Βούγιας,Γεωργούλη,Κακουλάκη,Λαζαρίδη,Λαζαρίδου,Μπαμπέτας,Παυλίδη,Σπέρτου
   */ 
 public class Spellchecker {
+	
+	private static Scanner input = new Scanner(System.in);
 
 
 	public static void main(String args[]) {
