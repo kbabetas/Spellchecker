@@ -112,7 +112,7 @@ public class Spellchecker {
 //edw einai i extra methodos mou gia na emfanizei tis proteinomenes lekseis
 	
 private static void giveOptions(String s1, String s2) {
-	Options r = new Options();
+	OptionsTest r = new OptionsTest();
 
  	double v = r.similarity(s1, s2) ;
 
