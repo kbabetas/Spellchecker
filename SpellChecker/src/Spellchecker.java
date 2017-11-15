@@ -92,6 +92,11 @@ public class Spellchecker {
 				if(!dictionary.containsValue(words[i].toLowerCase() )) {
 					wrongArray[k] = words[i];
 					k++ ;
+					// edw prosthetw ta extra gia tis epiloges
+					for (int j=0; j < dictionary.size() ; j++) {
+						String value = dictionary.get(j);
+						giveOptions(splittedArray[i], value) ;
+					}
 							
 				}
 			}
@@ -104,7 +109,17 @@ public class Spellchecker {
 				
        } /* Τέλος μεθόδου treeSearch */
 
+//edw einai i extra methodos mou gia na emfanizei tis proteinomenes lekseis
+	
+private static void giveOptions(String s1, String s2) {
+	Options r = new Options();
 
+ 	double v = r.similarity(s1, s2) ;
+
+ 		if (v > 0.75) { //an to pososto omoiotitas einai panw apo 75% na proteinei tin leksi gia diorthosi
+ 			System.out.println("protinomeni leksi gia : " +s1 + " i: " +s2);
+		}
+}
 
 
 
