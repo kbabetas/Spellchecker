@@ -116,7 +116,7 @@ private static void giveOptions(String s1, String s2) {
 
  	double v = r.similarity(s1, s2) ;
 
- 		if (v > 0.75) { //an to pososto omoiotitas einai panw apo 75% na proteinei tin leksi gia diorthosi
+ 		if (v > 75) { //an to pososto omoiotitas einai panw apo 75% na proteinei tin leksi gia diorthosi
  			System.out.println("protinomeni leksi gia : " +s1 + " i: " +s2);
 		}
 }
