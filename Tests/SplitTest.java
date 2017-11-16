@@ -59,7 +59,7 @@ public class SplitTest {
 			System.out.println("To programma douleuei kai me arithmous anamesa apo tis le3eis");
 		} else {
 			System.out.println("try again");
-			System.out.println(array3[2]);
+			System.out.println(array3[1]);
 		}
 
 		for  (int i=0 ; i< array3.length;i ++) {
