@@ -7,11 +7,11 @@ public class SplitTest {
 		String text1 = "Γεια σας παιδιά!";
 		String text2 = "δοκιμή με    κενό";
 
-		String[] splittedArray1 = text1.split("[^α-ωΑ-Ωά-ώ]+");
-		String[] splittedArray2 = text2.split("[^α-ωΑ-Ωά-ώ]+");
+		String[] words1 = text1.split("[^a-zA-Zα-ωΑ-Ωά-ώΐ]+");
+		String[] words2 = text2.split("[^a-zA-Zα-ωΑ-Ωά-ώΐ]+");
 
-		String[] array1 = splittedArray1;
-		String[] array2 = splittedArray2;
+		String[] array1 = words1;
+		String[] array2 = words2;
 
 		if (array1[0].equals("Γεια")) {
 			System.out.println("try 1:");
