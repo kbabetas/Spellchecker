@@ -93,11 +93,12 @@ public class Spellchecker {
 					wrongArray[k] = words[i];
 					k++ ;
 					//  extra επιλογές
+					System.out.println("Προτεινόμενες λέξεις για : " +words[i] +" : ");
 					for (int j=0; j < dictionary.size() ; j++) {
 						String value = dictionary.get(j);
 						giveOptions(words[i], value) ;
 					}
-							
+					System.out.println("-");		
 				}
 			}
 		}
@@ -118,7 +119,7 @@ private static void giveOptions(String s1, String s2) {
 
  		if (v > 85) { //αν το ποσοστό ομοιότητας είναι πάνω απο 85% να προτείνει την λέξη
 			// με χαμηλότερο ποσοστό προτείνει παρα πολλές λέξεις.
- 			System.out.println("προτεινόμενη λέξη για : " +s1 + " η: " +s2);
+ 			System.out.println(s2);
 		}
 }
 
