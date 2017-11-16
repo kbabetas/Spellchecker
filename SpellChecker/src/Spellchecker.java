@@ -95,7 +95,7 @@ public class Spellchecker {
 					// edw prosthetw ta extra gia tis epiloges
 					for (int j=0; j < dictionary.size() ; j++) {
 						String value = dictionary.get(j);
-						giveOptions(splittedArray[i], value) ;
+						giveOptions(words[i], value) ;
 					}
 							
 				}
