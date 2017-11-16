@@ -6,12 +6,15 @@ public class SplitTest {
 
 		String text1 = "Γεια σας παιδιά!";
 		String text2 = "δοκιμή με    κενό";
+		String text3 = "στα 5 χρόνια";
 
 		String[] words1 = text1.split("[^a-zA-Zα-ωΑ-Ωά-ώΐ]+");
 		String[] words2 = text2.split("[^a-zA-Zα-ωΑ-Ωά-ώΐ]+");
+		String[] words3 = text3.split("[^a-zA-Zα-ωΑ-Ωά-ώΐ]+");
 
 		String[] array1 = words1;
 		String[] array2 = words2;
+		String[] array3 = words3;
 
 		if (array1[0].equals("Γεια")) {
 			System.out.println("try 1:");
@@ -44,6 +47,23 @@ public class SplitTest {
 				System.out.println();
 				System.out.println(array2[i]);
 			    System.out.println("\n");
+			}
+		}
+
+		if (array3[1].equals("χρόνια")) {
+			System.out.println("try 3:");
+			System.out.println("well done team!");
+			System.out.println("To programma douleuei kai me arithmous anamesa apo tis le3eis");
+		} else {
+			System.out.println("try again");
+			System.out.println(array3[1]);
+		}
+
+		for  (int i=0 ; i< array3.length;i ++) {
+			if(array3[i] != null) {
+				System.out.println();
+				System.out.println(array3[i]);
+				System.out.println("\n");
 			}
 		}
 	}
