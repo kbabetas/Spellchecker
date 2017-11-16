@@ -92,7 +92,7 @@ public class Spellchecker {
 				if(!dictionary.containsValue(words[i].toLowerCase() )) {
 					wrongArray[k] = words[i];
 					k++ ;
-					// edw prosthetw ta extra gia tis epiloges
+					//  extra επιλογές
 					for (int j=0; j < dictionary.size() ; j++) {
 						String value = dictionary.get(j);
 						giveOptions(words[i], value) ;
@@ -109,15 +109,16 @@ public class Spellchecker {
 				
        } /* Τέλος μεθόδου treeSearch */
 
-//edw einai i extra methodos mou gia na emfanizei tis proteinomenes lekseis
+//μέθοδος που εμφανίζει προτεινόμενες λέξεις
 	
 private static void giveOptions(String s1, String s2) {
 	OptionsTest r = new OptionsTest();
 
  	double v = r.percSimilarity(s1, s2) ;
 
- 		if (v > 75) { //an to pososto omoiotitas einai panw apo 75% na proteinei tin leksi gia diorthosi
- 			System.out.println("protinomeni leksi gia : " +s1 + " i: " +s2);
+ 		if (v > 87) { //αν το ποσοστό ομοιότητας είναι πάνω απο 87% να προτείνει την λέξη
+			// με χαμηλότερο ποσοστό προτείνει παρα πολλές λέξεις.
+ 			System.out.println("προτεινόμενη λέξη για : " +s1 + " η: " +s2);
 		}
 }
 
