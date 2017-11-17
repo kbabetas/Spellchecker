@@ -23,7 +23,7 @@ public class Menu {
 			System.out.println("Το κείμενο είναι ορθογραφικά σωστό.\n\n");
 		} else {
 			System.out.println("Οι λάθος λέξεις είναι :\n\n");
-			Spellr.printArray(wrongwords);
+			Spell.printArray(wrongwords);
 		}
 
 
