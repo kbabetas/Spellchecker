@@ -12,7 +12,7 @@ private static Scanner input = new Scanner(System.in);
 
 		Spellcheck Spell = new Spellcheck();
 		int choice = getMenu();
-		String text = getGreekInput();
+		String text = getInput();
 		System.out.printf("\n");
 		Spell.spellcheck(choice,text);
 		
@@ -49,7 +49,7 @@ private static Scanner input = new Scanner(System.in);
 
 	}  /* Τέλος getMenu */
 	
-	public static String getGreekInput() {    /* Μέθοδος που σου επιτρέπει να διαβάζεις Strings στα ελληνικά */
+	public static String getInput() {    /* Μέθοδος που σου επιτρέπει να διαβάζεις Strings στα ελληνικά */
 
 		        System.out.flush();          		/* Καθαρίζει τη μνήμη  */
 
