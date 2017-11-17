@@ -10,7 +10,7 @@ public class Menu {
 		System.out.printf("\n");
 
 		String[] words = text.split("[^a-zA-Zα-ωΑ-Ωά-ώΐ]+"); 	
-		Spell.printArray(words);
+		
 		System.out.printf("\n\n");
 
 		Map<Integer, String> dictionary = BuildDictionary.buildDictionary(choice);
