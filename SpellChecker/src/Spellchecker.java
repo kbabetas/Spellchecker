@@ -29,11 +29,14 @@ public class Spellchecker {
 		
 		String[] wrongwords = treeSearch(words,dictionary);   /* αναζήτηση στο treemap */
 		
-		System.out.printf("\n");				
+		System.out.printf("\n");
 		
-		System.out.println("Οι λάθος λέξεις είναι :\n\n");
-		
-		printArray(wrongwords);					/* εκτύπωση λέξεων με ορθογραφικά λάθη */
+		if (wrongwords[0] == null &&  wrongwords[1] == null) {
+			System.out.println("Το κείμενο είναι ορθογραφικά σωστό.\n\n");
+		} else {
+			System.out.println("Οι λάθος λέξεις είναι :\n\n");
+			printArray(wrongwords);  /* εκτύπωση λέξεων με ορθογραφικά λάθη */
+		} 
 		
 
 	}
