@@ -1,7 +1,13 @@
+import java.util.Scanner;
 import java.util.Map;
 import java.util.TreeMap;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 public class Menu {
 
+private static Scanner input = new Scanner(System.in);
+	
+	
 	public static void main(String args[]) {
 
 		Spellcheck Spell = new Spellcheck();
