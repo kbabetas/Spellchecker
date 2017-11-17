@@ -13,7 +13,9 @@ public class Spellcheck {
 
 	public static void spellcheck(int choice, String text) {
 		
-		String[] words = text.split("[^a-zA-Zα-ωΑ-Ωά-ώΐ]+"); 	/* Σπάσιμο του String που έδωσε ο χρήστης σε επιμέρους λέξεις */
+		String[] words = text.split("[^a-zA-Zα-ωΑ-Ωά-ώΐ]+"); /* Σπάσιμο του String που έδωσε ο χρήστης σε επιμέρους λέξεις */
+		
+		System.out.printf("\n\n");
 		
 		Map<Integer, String> dictionary = BuildDictionary.buildDictionary();
 		
