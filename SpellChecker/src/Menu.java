@@ -4,11 +4,11 @@ public class Menu {
 
 	public static void main(String args[]) {
 
-		Spellchecker Spell = new Spellchecker();
+		Spellcheck Spell = new Spellcheck();
 		int choice = Spell.getMenu();
 		String text = Spell.getGreekInput();
 		System.out.printf("\n");
-		Spell.spellchecker(choice,text);
+		Spell.spellcheck(choice,text);
 		
 
 	}
