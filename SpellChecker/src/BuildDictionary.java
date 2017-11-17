@@ -9,24 +9,34 @@ import java.io.InputStreamReader;
 public class BuildDictionary {
 
 
-	public static Map<Integer, String>  buildDictionary() {
+	public static Map<Integer, String>  buildDictionary(int choice) {
 
 		Map<Integer, String> dictionary = new TreeMap<Integer, String>();
+		
+
 		try {
+			BufferedReader reader;
+			if (choice == 1) {
+				reader = new BufferedReader(new InputStreamReader(new FileInputStream("Greek Dictionary.txt"),"UTF-8")); 
+				/* Dictionary.txt should be on the same folder  */
+			} else if (choice == 2) {
+				reader = new BufferedReader(new InputStreamReader(new FileInputStream("English Dictionary.txt"),"UTF-8")); 
+				/* Dictionary.txt should be on the same folder  */
+			} else {
+				return null;
+			}
 
-			BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream("Dictionary.txt"),"UTF-8")); /* Dictionary.txt should be on the same folder  */
+            String word;
+            int key = 0;
+            while ((word = reader.readLine()) != null) {
+            	dictionary.put(key, word);
+            	key++;
+            }
+        } catch (IOException ioe) {
+           ioe.printStackTrace();
+       	}
 
-            		String word;
-            		int key = 0;
-            		while ((word = reader.readLine()) != null) {
-            			dictionary.put(key, word);
-            			key++;
-            		}
-        	} catch (IOException ioe) {
-           	ioe.printStackTrace();
-       		}
-
-	return dictionary;
+		return dictionary;
 	}
 
 }

@@ -10,12 +10,16 @@ import java.util.TreeMap;
   *	@author Βούγιας,Γεωργούλη,Κακουλάκη,Λαζαρίδη,Λαζαρίδου,Μπαμπέτας,Παυλίδη,Σπέρτου
   */ 
 public class Spellchecker {
+	
+	private static Scanner input = new Scanner(System.in);
 
 
 	public static void main(String args[]) {
 
 
-		System.out.println("Δώσε κείμενο και θα σου πω άμα είναι ορθογραφικά σωστό\n\n");
+		
+		int choice = getMenu();
+
 		
 		String text = getGreekInput();           		/* Κάλεσμα μεθόδου getGreekInput */
 		
@@ -106,6 +110,35 @@ public class Spellchecker {
 			
 				
        } /* Τέλος μεθόδου treeSearch */
+	
+	private static int getMenu() {
+
+
+
+		System.out.println("Press 1 for Greek:\nPress 2 for English:\n");
+
+		int choice = input.nextInt();
+
+		while( (choice != 1) && (choice != 2) ) {
+		  		System.out.print("You should choose either 1 or 2\n");
+		        System.out.print("Press 1 for Greek:\nPress 2 for English:\n");
+		        choice = input.nextInt();
+      		}
+
+		if(choice == 1) {
+		System.out.println("Πληκτρολόγησε ένα κείμενο στα ελληνικά και θα ελέγξουμε άμα είναι ορθογραφικά σωστό:\n\n");
+
+
+		} else {
+		System.out.println("Type a text in English and we will check if the spelling is correct:\n\n");
+
+
+		}
+
+		return choice;
+
+	}  /* Τέλος getMenu */
+
 
 
 
