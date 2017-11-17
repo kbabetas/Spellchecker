@@ -9,18 +9,13 @@ import java.util.TreeMap;
   *	if a wrong word exists, it is inserted in an array.
   *	@author Βούγιας,Γεωργούλη,Κακουλάκη,Λαζαρίδη,Λαζαρίδου,Μπαμπέτας,Παυλίδη,Σπέρτου
   */ 
-public class Spellchecker {
+public class Spellcheck {
 	
 	private static Scanner input = new Scanner(System.in);
 
 
-	public static void main(String args[]) {
+	public static void spellcheck(int choice, String text) {
 
-
-		
-		int choice = getMenu();
-
-		
 		String text = getGreekInput();           		/* Κάλεσμα μεθόδου getGreekInput */
 		
 		System.out.printf("\n");
@@ -41,16 +36,15 @@ public class Spellchecker {
 			System.out.println("Οι λάθος λέξεις είναι :\n\n");
 			printArray(wrongwords);  /* εκτύπωση λέξεων με ορθογραφικά λάθη */
 		} 
-		
 
 	}
 
 	/**
-	  *	Μέθοδος που σου επιτρέπει να διαβάζεις Strings στα ελληνικά.
-	  *	@return the greek text that the user inserted
+	  *	Μέθοδος που σου επιτρέπει να διαβάζεις Strings.
+	  *	@return the text that the user inserted
 	  *	@throws Exception if the input is wrong.
 	  */
-	private static String getGreekInput() {    
+	private static String getInput() {    
 
 	        System.out.flush();          		/* Καθαρίζει τη μνήμη  */
 
@@ -61,7 +55,7 @@ public class Spellchecker {
 	            return "Error: " + e.getMessage();
 	        }
 
-	}  /* Τέλος μεθόδου getGreekInput */
+	}  /* Τέλος μεθόδου getInput */
 
 
 	/**
