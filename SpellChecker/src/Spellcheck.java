@@ -15,10 +15,6 @@ public class Spellcheck {
 
 
 	public static void spellcheck(int choice, String text) {
-
-		String text = getGreekInput();           		/* Κάλεσμα μεθόδου getGreekInput */
-		
-		System.out.printf("\n");
 		
 		String[] words = text.split("[^a-zA-Zα-ωΑ-Ωά-ώΐ]+"); 	/* Σπάσιμο του String που έδωσε ο χρήστης σε επιμέρους λέξεις */
 		
