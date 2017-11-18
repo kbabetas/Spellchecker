@@ -1,5 +1,6 @@
 import java.util.Map;
 import java.util.TreeMap;
+import java.util.Scanner;
 
 /** 
   *	In this class the user inserts a text that is splitted into words and these words are spell-checked one to one.
@@ -17,7 +18,7 @@ public class Spellcheck {
 		
 		System.out.printf("\n\n");
 		
-		Map<Integer, String> dictionary = BuildDictionary.buildDictionary();
+		Map<Integer, String> dictionary = BuildDictionary.buildDictionary(choice);
 		
 		printArray(words);				 /* εκτύπωση των λέξεων που έδωσε ο χρήστης */
 		
