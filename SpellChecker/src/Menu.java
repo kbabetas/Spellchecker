@@ -32,7 +32,11 @@ public class Menu {
 
 	}
 	
-	
+	/**
+	 * In this method the user selects either Greek or English
+	 * and also selects the way the text is inserted
+	 * @return an integer variable that contains the language the user selected
+	 */
 	public static int getMenu() {
 		System.out.println("Press 1 for Greek/Πιέστε 1 για ελληνικά:\nPress 2 for English/Πιέστε 2 για αγγλικά:\n");
 
@@ -94,20 +98,20 @@ public class Menu {
 
 
 
-	}  /* Τέλος getMenu */
+	}  /* end of method getMenu */
 	
-	public static String getInput() {    /* Μέθοδος που σου επιτρέπει να διαβάζεις Strings στα ελληνικά */
+	public static String getInput() {    /*  with this method you can read Strings in Greek */
 
-		        System.out.flush();          		/* Καθαρίζει τη μνήμη  */
+		        System.out.flush();          		/* clear the memory */
 
 		        try {
-		            BufferedReader in = new BufferedReader(new InputStreamReader(System.in, "cp737"));    /* Χειρισμός εξαίρεσης  */
+		            BufferedReader in = new BufferedReader(new InputStreamReader(System.in, "cp737"));    /*handle exception */
 		            return in.readLine();
 		        } catch (Exception e) {
 		            return "Error: " + e.getMessage();
 		        }
 
-	}  /* Τέλος μεθόδου getGreekInput */
+	}  /* end of method getGreekInput */
 
 	/**
 	 *
