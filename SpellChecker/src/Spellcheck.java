@@ -101,7 +101,7 @@ public class Spellcheck {
 	}
 
 
-	private static int LevenshteinDistance( String s1, String s2) {
+	public static int LevenshteinDistance( String s1, String s2) {
 	//upologizei poses allages xreiazonte gia na ginoun ta duo string idia
 	int sl1 = s1.length() ;
 	int sl2 = s2.length();
@@ -148,14 +148,14 @@ public class Spellcheck {
 	 return dis[sl1][sl2];
  }
 
-private static double percSimilarity(String s1, String s2) {
+public static double percSimilarity(String s1, String s2) {
  int d = LevenshteinDistance(s1,s2);
  double sim = (double)(((s1.length() + s2.length()) -d)/(double)(s1.length() + s2.length())*100);
 
  return sim;
  }
 
-private static void giveOptions(String s1, String s2) {
+public static void giveOptions(String s1, String s2) {
 
  	double v = percSimilarity(s1, s2) ;
 
