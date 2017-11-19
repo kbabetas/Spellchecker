@@ -94,7 +94,12 @@ public class Spellcheck {
 					
 					for (int j=0; j < dictionary.size() ; j++) {
 						String value = dictionary.get(j);
-						giveOptions(words[i], value) ;
+						if( words[i]!= words[i].toLowerCase() ){
+							giveOptions(words[i], value) ;
+							giveOptions(words[i].toLowerCase(), value) ;
+						} else {
+							giveOptions(words[i], value) ;
+						}
 					}
 					System.out.println("-");
 				}
