@@ -3,9 +3,16 @@ import java.util.Map;
 import java.util.TreeMap;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-public class Menu {
+import java.io.FileReader; 
+import java.io.IOException;
 
-private static Scanner input = new Scanner(System.in);
+public class Menu {
+	
+	private static int selection;  //shows how the user selects to give the text
+	private static int choice;  //shows the user's choice either Greek or English
+	
+
+	private static Scanner input = new Scanner(System.in);
 	
 	
 	public static void main(String args[]) {
@@ -63,6 +70,90 @@ private static Scanner input = new Scanner(System.in);
 	}  /* Τέλος μεθόδου getGreekInput */
 
 	
+	public static String getFileReader()  {
+
+			input.nextLine();
+
+			String path = input.nextLine();
+		    	String text = null;
+
+			try {
+
+				String[] printLines =  getFile(path);
+
+
+
+
+				for (int i = 0;i < printLines.length; i++) {
+					text += " " + printLines[i];
+				}
+			
+				System.out.println();
+			
+				if (choice == 2) {
+					System.out.println("You read the file successfully");
+				} else {
+					System.out.println("Το αρχείο διαβάστηκε επιτυχώς");
+
+				}
+
+
+			}
+			
+			catch (IOException e) {
+				System.out.println("Sorry, we cannot find your text file. Please try again." );
+
+			}
+			
+			String newtext= text.substring(4);
+			
+			if (choice == 2 ) {
+			System.out.println("The context of your file is:");
+		} else {
+			System.out.println("Το περιεχόμενο του αρχείου είναι:\n");
+
+		}
+
+			System.out.println(newtext);
+
+			return newtext;
+	} // end of method getFileReader
+	
+	public static String[] getFile(String path) throws IOException {
+		
+		FileReader fr = new FileReader(path);
+		BufferedReader textReader = new BufferedReader(fr);
+	
+		int numberOfLines = calculateLines(path);
+	   	String[] textOfData = new String[numberOfLines]; //each position in textData array can hold one line of text.
+	
+	   	for (int i=0; i< numberOfLines; i++) {
+	    		textOfData[i] = textReader.readLine();
+	    	
+	    	}
+	    
+	    textReader.close();
+	    return textOfData;
+	
+	} //end of method getFile
+	
+	public static int calculateLines(String path) throws IOException{
+		
+		
+		FileReader fr = new FileReader(path);
+		BufferedReader textReader = new BufferedReader(fr);
+		
+		
+		int numberOfLines = 0;
+		
+		while ( textReader.readLine()  != null ) {
+			numberOfLines++ ;
+		}
+		
+		textReader.close();
+		
+		return numberOfLines;
+	} //end of method calculateLines
 	
 
 
