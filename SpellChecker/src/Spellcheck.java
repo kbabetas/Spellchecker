@@ -72,7 +72,7 @@ public class Spellcheck {
 	  *	έπειτα γεμίζεται ένας τρίτος με τις λανθασμένες λέξεις.
 	  *	@return the array with the wrong words found; null array if no wrong words are found.
 	  */			
-	private static String[] treeSearch(String [] words , Map<Integer, String> dictionary) {
+	private static String[] treeSearch(String [] words , Map<Integer, String> dictionary,int choice) {
 		
 		String[] wrongArray = new String[words.length + 1];
 		int k = 0;
@@ -85,8 +85,13 @@ public class Spellcheck {
 				if(!dictionary.containsValue(words[i].toLowerCase() )) {
 					wrongArray[k] = words[i];
 					k++ ;
+					if (choice == 1) {
+						System.out.println("Προτεινόμενες λέξεις για : " +words[i] +" : ");
+					} else {
+						System.out.println("Suggestions for : " +words[i] +" : ");
+					}
 				//  extra επιλογές
-					System.out.println("Προτεινόμενες λέξεις για : " +words[i] +" : ");
+					
 					for (int j=0; j < dictionary.size() ; j++) {
 						String value = dictionary.get(j);
 						giveOptions(words[i], value) ;
