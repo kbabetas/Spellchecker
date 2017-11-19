@@ -20,19 +20,36 @@ public class Spellcheck {
 		
 		Map<Integer, String> dictionary = BuildDictionary.buildDictionary(choice);
 		
-		printArray(words);				 /* εκτύπωση των λέξεων που έδωσε ο χρήστης */
-		
 		String[] wrongwords = treeSearch(words,dictionary);   /* αναζήτηση στο treemap */
 		
 		System.out.printf("\n");
 		
-		if (wrongwords[0] == null &&  wrongwords[1] == null) {
-			System.out.println("Το κείμενο είναι ορθογραφικά σωστό.\n\n");
-		} else {
-			System.out.println("Οι λάθος λέξεις είναι :\n\n");
-			printArray(wrongwords);  /* εκτύπωση λέξεων με ορθογραφικά λάθη */
-		} 
+		int flag = 0;
 
+		for (int i = 0; i < wrongwords.length;i++) {
+			if (wrongwords[i]!= null) {
+				flag = 1;
+			}
+		}
+
+		if(flag == 0) {
+			if(choice==1) {
+				System.out.println("Το κείμενο είναι ορθογραφικά σωστό.\n\n");
+			   } else {
+				System.out.println("The text is spelled correctly.\n\n");
+			}
+		} else {
+			if(choice==1) {
+				System.out.println("Οι λάθος λέξεις είναι :\n\n");
+			} else {
+				System.out.println("The wrong words are:\n\n");
+			}
+			printArray(wrongwords);
+
+		}
+		
+		
+		
 	}
 
 	/**
@@ -42,9 +59,7 @@ public class Spellcheck {
 
 		for  (int i=0 ; i< array.length;i ++) {
 			if(array[i] != null) {
-				System.out.println();			 /* Κενά */
 				System.out.println(array[i]);      /* Εκτύπωση του πίνακα */
-            			System.out.println("\n");            /* Κενά */
 			}
 
    		 }
@@ -59,7 +74,7 @@ public class Spellcheck {
 	  */			
 	private static String[] treeSearch(String [] words , Map<Integer, String> dictionary) {
 		
-		String[] wrongArray = new String[words.length];
+		String[] wrongArray = new String[words.length + 1];
 		int k = 0;
 		
 		for(int i = 0; i < words.length; i++) {
