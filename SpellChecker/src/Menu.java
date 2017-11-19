@@ -18,8 +18,14 @@ public class Menu {
 	public static void main(String args[]) {
 
 		Spellcheck Spell = new Spellcheck();
-		int choice = getMenu();
-		String text = getInput();
+		choice = getMenu();
+		String text = null;
+		 if(selection == 1) {
+			text = getInput();
+		 } else {
+			text = getFileReader();
+		 }
+		
 		System.out.printf("\n");
 		Spell.spellcheck(choice,text);
 		
@@ -28,31 +34,65 @@ public class Menu {
 	
 	
 	public static int getMenu() {
+		System.out.println("Press 1 for Greek:\nPress 2 for English:\n");
 
+		int choice = input.nextInt();
+		System.out.print("\n");
 
+		while( (choice != 1) && (choice != 2) ) {
+			  System.out.print("You should choose either 1 or 2\n");
+			  System.out.print("Press 1 for Greek:\nPress 2 for English:\n");
+			  choice = input.nextInt();
+	      	}
 
-			System.out.println("Press 1 for Greek:\nPress 2 for English:\n");
+		if(choice == 1) {
+			System.out.println("Πληκτρολόγησε 1 άμα θέλεις να γράψεις  ένα δικό σου  κείμενο :");
+			System.out.println("Πληκτρολόγησε 2 άμα θέλεις να ελέγξεις ορθογραφικά ένα αρχείο της επιλογής σου:\n");
 
-			int choice = input.nextInt();
+			selection = input.nextInt();
+			System.out.print("\n");
+			while( (selection != 1) && (selection != 2) ) {
+				System.out.print("You should choose either 1 or 2\n");
 
-			while( (choice != 1) && (choice != 2) ) {
-			  		System.out.print("You should choose either 1 or 2\n");
-			        System.out.print("Press 1 for Greek:\nPress 2 for English:\n");
-			        choice = input.nextInt();
+				selection = input.nextInt();
+				System.out.print("\n");
 	      		}
 
-			if(choice == 1) {
-			System.out.println("Πληκτρολόγησε ένα κείμενο στα ελληνικά και θα ελέγξουμε άμα είναι ορθογραφικά σωστό:\n\n");
 
-
-
+			if(selection == 1) {
+				System.out.println("Πληκτρολόγησε ένα κείμενο στα ελληνικά και θα ελέγξουμε άμα είναι ορθογραφικά σωστό:\n\n");
 			} else {
-			System.out.println("Type a text in English and we will check if the spelling is correct:\n\n");
-
-
+				System.out.println("Πληκτρολόγησε το path που βρίσκεται το αρχείο και θα ελέγξουμε άμα είναι ορθογραφικά σωστό:\n");
 			}
 
-			return choice;
+
+
+		} else {
+			System.out.println("Press 1  if you want to test the spelling of a text that you will type:");
+			System.out.println("Press 2  if you want to test the spelling of a file that you will choose:\n");
+
+			selection = input.nextInt();
+			System.out.print("\n");
+			while( (selection != 1) && (selection != 2) ) {
+				System.out.print("You should choose either 1 or 2\n");
+
+				selection = input.nextInt();
+				System.out.print("\n");
+	      		}
+			if(selection == 1) {
+				System.out.println("Type a text in English and we will check if the spelling is correct:\n\n");
+			} else {
+				System.out.println("Please insert the path of the file you want to read and we will check if the spelling is correct:\n");
+			 }
+
+
+
+		}
+
+		return choice;
+		
+
+
 
 	}  /* Τέλος getMenu */
 	
@@ -98,9 +138,9 @@ public class Menu {
 				}
 
 
-			}
 			
-			catch (IOException e) {
+			
+			} catch (IOException e) {
 				System.out.println("Sorry, we cannot find your text file. Please try again." );
 
 			}
@@ -109,10 +149,10 @@ public class Menu {
 			
 			if (choice == 2 ) {
 			System.out.println("The context of your file is:");
-		} else {
+			} else {
 			System.out.println("Το περιεχόμενο του αρχείου είναι:\n");
 
-		}
+			}
 
 			System.out.println(newtext);
 
