@@ -20,7 +20,7 @@ public class Spellcheck {
 		
 		Map<Integer, String> dictionary = BuildDictionary.buildDictionary(choice);
 		
-		String[] wrongwords = treeSearch(words,dictionary);   /* αναζήτηση στο treemap */
+		String[] wrongwords = treeSearch(words,dictionary,choice);   /* αναζήτηση στο treemap */
 		
 		System.out.printf("\n");
 		
