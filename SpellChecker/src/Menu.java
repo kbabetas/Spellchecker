@@ -34,7 +34,7 @@ public class Menu {
 	
 	
 	public static int getMenu() {
-		System.out.println("Press 1 for Greek:\nPress 2 for English:\n");
+		System.out.println("Press 1 for Greek/Πιέστε 1 για ελληνικά:\nPress 2 for English/Πιέστε 2 για αγγλικά:\n");
 
 		int choice = input.nextInt();
 		System.out.print("\n");
