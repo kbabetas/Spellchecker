@@ -14,13 +14,13 @@ public class Spellcheck {
 
 	public static void spellcheck(int choice, String text) {
 		
-		String[] words = text.split("[^a-zA-Zα-ωΑ-Ωά-ώΐ]+"); /* Σπάσιμο του String που έδωσε ο χρήστης σε επιμέρους λέξεις */
+		String[] words = text.split("[^a-zA-Zα-ωΑ-Ωά-ώΐ]+"); /* the String is splitted in words */
 		
 		System.out.printf("\n\n");
 		
 		Map<Integer, String> dictionary = BuildDictionary.buildDictionary(choice);
 		
-		String[] wrongwords = treeSearch(words,dictionary,choice);   /* αναζήτηση στο treemap */
+		String[] wrongwords = treeSearch(words,dictionary,choice);   /* search inside the treemap */
 		
 		System.out.printf("\n");
 		
@@ -53,18 +53,18 @@ public class Spellcheck {
 	}
 
 	/**
-	  *	Μέθοδος που εκτυπώνει  πίνακα
+	  *	This method displays an array
 	  */
 	private static void printArray(String[] array) {    
 
 		for  (int i=0 ; i< array.length;i ++) {
 			if(array[i] != null) {
-				System.out.println(array[i]);      /* Εκτύπωση του πίνακα */
+				System.out.println(array[i]);      
 			}
 
    		 }
 
-	} /* Τέλος μεθόδου printArray */
+	} /* end of the method printArray */
 
 	
 	/** 
@@ -169,11 +169,11 @@ public static void giveOptions(String s1, String s2) {
 
  	double v = percSimilarity(s1, s2) ;
 
- 		if (v > 85) { //an to pososto omoiotitas einai panw apo 75% na proteinei tin leksi gia diorthosi
+ 		if (v > 85) { //if the percentage of similarity is over the 75%, the program proposes the specific word
  			System.out.println(s2);
 		}
 }
 				
 	
-} /* Τέλος κλάσης */
+} /* end of class */
 
