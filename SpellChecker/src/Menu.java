@@ -109,7 +109,12 @@ public class Menu {
 
 	}  /* Τέλος μεθόδου getGreekInput */
 
-	
+	/**
+	 *
+	 * This method asks from the user the path of the text file and returns it's content in a String
+	 * 
+	 * @return returns a String with the content of the text file
+	 */
 	public static String getFileReader()  {
 
 			input.nextLine();
@@ -159,6 +164,13 @@ public class Menu {
 			return newtext;
 	} // end of method getFileReader
 	
+	/**
+	 * This method returns all the lines from the text file
+	 * then these lines will be held in the array textOfData.
+	 * 
+	 * @return a String array with the lines of the text file.
+	 * @throws IOException will throw errors in the line.
+	 */
 	public static String[] getFile(String path) throws IOException {
 		
 		FileReader fr = new FileReader(path);
@@ -177,6 +189,11 @@ public class Menu {
 	
 	} //end of method getFile
 	
+	/**
+	 * This method calculates the number of lines of a text file.
+	 * @return returns the number of lines of a text file.
+	 * @throws IOException
+	 */
 	public static int calculateLines(String path) throws IOException{
 		
 		
