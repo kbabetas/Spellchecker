@@ -12,15 +12,15 @@ public class Spellcheck {
 	
 
 
-	public static void spellcheck(int choice, String text) {
+	public static void spellcheck(int language, String text) {
 		
 		String[] words = text.split("[^a-zA-Zα-ωΑ-Ωά-ώΐ]+"); /* the String is splitted in words */
 		
 		System.out.printf("\n\n");
 		
-		Map<Integer, String> dictionary = BuildDictionary.buildDictionary(choice);
+		Map<Integer, String> dictionary = BuildDictionary.buildDictionary(language);
 		
-		String[] wrongwords = treeSearch(words,dictionary,choice);   /* search inside the treemap */
+		String[] wrongwords = treeSearch(words,dictionary,language);   /* search inside the treemap */
 		
 		System.out.printf("\n");
 		
@@ -33,13 +33,13 @@ public class Spellcheck {
 		}
 
 		if(flag == 0) {
-			if(choice==1) {
+			if(language == 1) {
 				System.out.println("Το κείμενο είναι ορθογραφικά σωστό.\n\n");
 			   } else {
 				System.out.println("The text is spelled correctly.\n\n");
 			}
 		} else {
-			if(choice==1) {
+			if(language == 1) {
 				System.out.println("Οι λάθος λέξεις είναι :\n\n");
 			} else {
 				System.out.println("The wrong words are:\n\n");
@@ -72,7 +72,7 @@ public class Spellcheck {
 	  *	έπειτα γεμίζεται ένας τρίτος με τις λανθασμένες λέξεις.
 	  *	@return the array with the wrong words found; null array if no wrong words are found.
 	  */			
-	private static String[] treeSearch(String [] words , Map<Integer, String> dictionary,int choice) {
+	private static String[] treeSearch(String [] words , Map<Integer, String> dictionary,int language) {
 		
 		String[] wrongArray = new String[words.length + 1];
 		int k = 0;
@@ -85,7 +85,7 @@ public class Spellcheck {
 				if(!dictionary.containsValue(words[i].toLowerCase() )) {
 					wrongArray[k] = words[i];
 					k++ ;
-					if (choice == 1) {
+					if (language == 1) {
 						System.out.println("Προτεινόμενες λέξεις για : " +words[i] +" : ");
 					} else {
 						System.out.println("Suggestions for : " +words[i] +" : ");
@@ -118,16 +118,16 @@ public class Spellcheck {
 	if (sl1 == 0) {
 		return sl2 ;
 	}
-	if (sl2==0) {
+	if (sl2 == 0) {
 		return sl1;
 	}
 	int[][] dis =new int[sl1+1][sl2+1];
-	for (int i=0;i<=sl1;i++){
-		for (int j=0;j<=sl2;j++) {
-			if (i==0) {
+	for (int i = 0; i <= sl1; i++){
+		for (int j = 0; j <= sl2; j++) {
+			if (i == 0) {
 				dis[i][j] = j;
 			}
-			if (j==0) {
+			if (j == 0) {
 				dis[i][j] = i;
 			}
 
