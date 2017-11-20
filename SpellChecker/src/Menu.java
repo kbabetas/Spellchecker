@@ -9,7 +9,7 @@ import java.io.IOException;
 public class Menu {
 	
 	private static int selection;  //shows how the user selects to give the text
-	private static int choice;  //shows the user's choice either Greek or English
+	private static int language;  //shows the user's choice either Greek or English
 	
 
 	private static Scanner input = new Scanner(System.in);
@@ -18,7 +18,7 @@ public class Menu {
 	public static void main(String args[]) {
 
 		Spellcheck Spell = new Spellcheck();
-		choice = getMenu();
+		language = getMenu();
 		String text = null;
 		 if(selection == 1) {
 			text = getInput();
@@ -27,7 +27,7 @@ public class Menu {
 		 }
 		
 		System.out.printf("\n");
-		Spell.spellcheck(choice,text);
+		Spell.spellcheck(language,text);
 		
 
 	}
@@ -40,16 +40,16 @@ public class Menu {
 	public static int getMenu() {
 		System.out.println("Press 1 for Greek/Πιέστε 1 για ελληνικά:\nPress 2 for English/Πιέστε 2 για αγγλικά:\n");
 
-		int choice = input.nextInt();
+		int language = input.nextInt();
 		System.out.print("\n");
 
-		while( (choice != 1) && (choice != 2) ) {
+		while( (language != 1) && (language != 2) ) {
 			  System.out.print("You should choose either 1 or 2\n");
 			  System.out.print("Press 1 for Greek:\nPress 2 for English:\n");
-			  choice = input.nextInt();
+			  language = input.nextInt();
 	      	}
 
-		if(choice == 1) {
+		if(language == 1) {
 			System.out.println("Πληκτρολόγησε 1 άμα θέλεις να γράψεις  ένα δικό σου  κείμενο :");
 			System.out.println("Πληκτρολόγησε 2 άμα θέλεις να ελέγξεις ορθογραφικά ένα αρχείο της επιλογής σου:\n");
 
@@ -93,7 +93,7 @@ public class Menu {
 
 		}
 
-		return choice;
+		return language;
 		
 
 
@@ -139,7 +139,7 @@ public class Menu {
 			
 				System.out.println();
 			
-				if (choice == 2) {
+				if (language == 2) {
 					System.out.println("You read the file successfully");
 				} else {
 					System.out.println("Το αρχείο διαβάστηκε επιτυχώς");
@@ -156,7 +156,7 @@ public class Menu {
 			
 			String newtext= text.substring(4);
 			
-			if (choice == 2 ) {
+			if (language == 2 ) {
 			System.out.println("The context of your file is:");
 			} else {
 			System.out.println("Το περιεχόμενο του αρχείου είναι:\n");
