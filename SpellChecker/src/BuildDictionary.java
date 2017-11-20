@@ -17,17 +17,17 @@ public class BuildDictionary {
  * @param choice shows which of the two dictionaries the user will need.
  * @return the appropriate dictionary in a treemap 
  */
-	public static Map<Integer, String>  buildDictionary(int choice) {
+	public static Map<Integer, String>  buildDictionary(int language) {
 
 		Map<Integer, String> dictionary = new TreeMap<Integer, String>();
 		
 
 		try {
 			BufferedReader reader;
-			if (choice == 1) {
+			if (language == 1) {
 				reader = new BufferedReader(new InputStreamReader(new FileInputStream("Greek Dictionary.txt"),"UTF-8")); 
 				/* Dictionary.txt should be on the same folder  */
-			} else if (choice == 2) {
+			} else if (language == 2) {
 				reader = new BufferedReader(new InputStreamReader(new FileInputStream("English Dictionary.txt"),"UTF-8")); 
 				/* Dictionary.txt should be on the same folder  */
 			} else {
