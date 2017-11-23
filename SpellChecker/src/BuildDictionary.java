@@ -1,3 +1,5 @@
+package gr.aueb.dmst.dirtybits;
+
 import java.util.Map;
 import java.util.TreeMap;
 import java.io.IOException;
