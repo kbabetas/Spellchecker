@@ -1,3 +1,5 @@
+package gr.aueb.dmst.dirtybits;
+
 import java.util.Scanner;
 
 public class SplitTest {
