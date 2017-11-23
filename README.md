@@ -1,4 +1,4 @@
-# JAVA
+﻿
 JAVA II Project dmst 
 
 Team Name: Dirty Bits
@@ -21,4 +21,4 @@ Team Members:
 
 8160105 Παυλίδη Μαρία Μαρίνα - marininapav
 
-8160121 Σπέρτου Χρύσα - chrysasp
+8160121 Σπέρτου Χρυσή - chrysasp
