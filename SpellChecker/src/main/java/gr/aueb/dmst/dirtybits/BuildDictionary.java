@@ -23,30 +23,25 @@ public class BuildDictionary {
 
 		Map<Integer, String> dictionary = new TreeMap<Integer, String>();
 		
-
 		try {
 			BufferedReader reader;
 			if (language == 1) {
 				reader = new BufferedReader(new InputStreamReader(new FileInputStream("Greek Dictionary.txt"),"UTF-8")); 
-				/* Dictionary.txt should be on the same folder  */
 			} else if (language == 2) {
 				reader = new BufferedReader(new InputStreamReader(new FileInputStream("English Dictionary.txt"),"UTF-8")); 
-				/* Dictionary.txt should be on the same folder  */
 			} else {
 				return null;
 			}
 
-            String word;
-            int key = 0;
-            while ((word = reader.readLine()) != null) {
-            	dictionary.put(key, word);
-            	key++;
-            }
-        } catch (IOException ioe) {
-           ioe.printStackTrace();
-       	}
-
+           		String word;
+            		int key = 0;
+            		while ((word = reader.readLine()) != null) {
+            			dictionary.put(key, word);
+            			key++;
+           		}
+		} catch (IOException ioe) {
+			ioe.printStackTrace();
+		}
 		return dictionary;
 	}
-
 }
