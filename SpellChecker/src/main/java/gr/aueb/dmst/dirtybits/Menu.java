@@ -18,15 +18,20 @@ public class Menu {
 		setEncoding();
 		Spellcheck Spell = new Spellcheck();
 		language = getMenu();
-		String text = null;
-		 if (selection == 1) {
-			text = getInput();
-		 } else {
-			text = getFileReader();
-		 }
 		
-		System.out.println();
-		Spell.spellcheck(language,text);
+		while(language!=3) {
+		 	String text = typereader();
+			Spellchecker.spellchecker(language,text);
+			System.out.printf("\n\n");
+			language = getMenu();
+			if(language!=3) {
+				String newtext = typereader();
+				Spellchecker.spellchecker(choice,newtext);
+				language = getMenu();
+			}
+		}
+		
+		
 	}
 	
 	/**
@@ -200,5 +205,19 @@ public class Menu {
 		} catch (IOException ioe) {
 			ioe.printStackTrace();
 		}
+	}
+	
+	
+	
+	public static String typereader() {
+		String text = null;
+		if(selection == 1) {
+		text = getInput();
+		} else {
+		text = getFileReader();
+        	}
+		System.out.printf("\n");
+
+		return text;
 	}
 }
