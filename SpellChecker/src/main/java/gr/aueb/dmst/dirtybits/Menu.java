@@ -26,7 +26,7 @@ public class Menu {
 			language = getMenu();
 			if(language!=3) {
 				String newtext = typereader();
-				Spell.spellcheck(choice,newtext);
+				Spell.spellcheck(language,newtext);
 				language = getMenu();
 			}
 		}
