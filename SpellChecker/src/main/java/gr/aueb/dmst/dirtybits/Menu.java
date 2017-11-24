@@ -35,51 +35,63 @@ public class Menu {
 	 * @return an integer variable that contains the language the user selected
 	 */
 	public static int getMenu() {
-		System.out.println("Press 1 for Greek/Πιέστε 1 για ελληνικά:\nPress 2 for English/Πιέστε 2 για αγγλικά:\n");
+		
+		Scanner input = new Scanner(System.in);
+		int language = 0;
+		int selection;
+		System.out.println("Press 1 for Greek/ Πιέστε 1 για ελληνικά:\nPress 2 for English/ Πιέστε 2 για αγγλικά:\n");
 
-		int language = input.nextInt();
-		System.out.println();
-
-		while ((language != 1) && (language != 2)) {
-			  System.out.print("Please press 1 or 2\n");
-			  System.out.print("Press 1 for Greek:\nPress 2 for English:\n");
-			  language = input.nextInt();
-	      	}
-
-		if (language == 1) {
-			System.out.println("Πληκτρολόγησε 1 άμα θέλεις να γράψεις ένα δικό σου  κείμενο:");
-			System.out.println("Πληκτρολόγησε 2 άμα θέλεις να ελέγξεις ορθογραφικά ένα αρχείο της επιλογής σου:\n");
-
-			selection = input.nextInt();
+		try {
+			language = input.nextInt();
 			System.out.println();
-			while ((selection != 1) && (selection != 2)) {
-				System.out.print("Παρακαλώ πληκτρολογήστε 1 ή 2\n");
+
+			while ((language != 1) && (language != 2)) {
+		       		System.out.print("Please press 1 or 2\n");
+				System.out.print("Press 1 for Greek:\nPress 2 for English:\n");
+				language = input.nextInt();
+		  	}
+
+			if (language == 1) {
+				System.out.println("Πληκτρολόγησε 1 άμα θέλεις να γράψεις ένα δικό σου  κείμενο:");
+				System.out.println("Πληκτρολόγησε 2 άμα θέλεις να ελέγξεις ορθογραφικά ένα αρχείο της επιλογής σου:\n");
+
 				selection = input.nextInt();
 				System.out.println();
-	      		}
-			if (selection == 1) {
-				System.out.println("Πληκτρολόγησε ένα κείμενο στα ελληνικά και θα ελέγξουμε άμα είναι ορθογραφικά σωστό:\n\n");
-			} else {
-				System.out.println("Πληκτρολόγησε το path που βρίσκεται το αρχείο και θα ελέγξουμε άμα είναι ορθογραφικά σωστό:\n");
-			}
-		} else {
-			System.out.println("Press 1 if you want to test the spelling of a text that you will type:");
-			System.out.println("Press 2 if you want to test the spelling of a file that you will choose:\n");
+				while ((selection != 1) && (selection != 2)) {
+					System.out.print("Παρακαλώ πληκτρολογήστε 1 ή 2\n");
+					selection = input.nextInt();
+					System.out.println();
+		      		}
+					if (selection == 1) {
+						System.out.println("Πληκτρολόγησε ένα κείμενο στα ελληνικά και θα ελέγξουμε άμα είναι ορθογραφικά σωστό:\n\n");
+					} else {
+						System.out.println("Πληκτρολόγησε το path που βρίσκεται το αρχείο και θα ελέγξουμε άμα είναι ορθογραφικά σωστό:\n");
+					}
+				} else {
+					System.out.println("Press 1 if you want to test the spelling of a text that you will type:");
+					System.out.println("Press 2 if you want to test the spelling of a file that you will choose:\n");
 
-			selection = input.nextInt();
-			System.out.println();
-			while ((selection != 1) && (selection != 2)) {
-				System.out.print("Please press 1 or 2\n");
-				selection = input.nextInt();
-				System.out.println();
-	      		}
-			if (selection == 1) {
-				System.out.println("Type a text in English and we will check if the spelling is correct:\n\n");
-			} else {
-				System.out.println("Please insert the path of the file and we will check if the spelling is correct:\n");
-			}
-		}
+					selection = input.nextInt();
+					System.out.println();
+					while ((selection != 1) && (selection != 2)) {
+						System.out.print("Please press 1 or 2\n");
+						selection = input.nextInt();
+						System.out.println();
+		      		}
+					if (selection == 1) {
+						System.out.println("Type a text in English and we will check if the spelling is correct:\n\n");
+					} else {
+						System.out.println("Please insert the path of the file and we will check if the spelling is correct:\n");
+					}
+				}
+		} catch (Exception e) {
+
+			System.out.println("\nError: You can only use 1 or 2");
+			getMenu();
+		} /* end of exception*/
+
 		return language;
+
 	}  /* end of method getMenu */
 	
 	public static String getInput() {    
