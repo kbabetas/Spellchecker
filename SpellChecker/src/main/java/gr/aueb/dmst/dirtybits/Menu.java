@@ -46,7 +46,7 @@ public class Menu {
 		System.out.print("\n");
 
 		while( (language != 1) && (language != 2) ) {
-			  System.out.print("You should choose either 1 or 2\n");
+			  System.out.print("Please press 1 or 2\n");
 			  System.out.print("Press 1 for Greek:\nPress 2 for English:\n");
 			  language = input.nextInt();
 	      	}
@@ -58,7 +58,7 @@ public class Menu {
 			selection = input.nextInt();
 			System.out.print("\n");
 			while( (selection != 1) && (selection != 2) ) {
-				System.out.print("You should choose either 1 or 2\n");
+				System.out.print("Παρακαλώ πληκτρολογήστε 1 ή 2\n");
 
 				selection = input.nextInt();
 				System.out.print("\n");
@@ -80,7 +80,7 @@ public class Menu {
 			selection = input.nextInt();
 			System.out.print("\n");
 			while( (selection != 1) && (selection != 2) ) {
-				System.out.print("You should choose either 1 or 2\n");
+				System.out.print("Please press 1 or 2\n");
 
 				selection = input.nextInt();
 				System.out.print("\n");
@@ -88,7 +88,7 @@ public class Menu {
 			if(selection == 1) {
 				System.out.println("Type a text in English and we will check if the spelling is correct:\n\n");
 			} else {
-				System.out.println("Please insert the path of the file you want to read and we will check if the spelling is correct:\n");
+				System.out.println("Please insert the path of the file and we will check if the spelling is correct:\n");
 			 }
 
 
@@ -142,7 +142,7 @@ public class Menu {
 				System.out.println();
 			
 				if (language == 2) {
-					System.out.println("You read the file successfully");
+					System.out.println("The file was read successfully");
 				} else {
 					System.out.println("Το αρχείο διαβάστηκε επιτυχώς");
 
