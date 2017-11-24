@@ -21,12 +21,12 @@ public class Menu {
 		
 		while(language!=3) {
 		 	String text = typereader();
-			Spellchecker.spellchecker(language,text);
+			Spell.spellcheck(language,text);
 			System.out.printf("\n\n");
 			language = getMenu();
 			if(language!=3) {
 				String newtext = typereader();
-				Spellchecker.spellchecker(choice,newtext);
+				Spell.spellcheck(choice,newtext);
 				language = getMenu();
 			}
 		}
