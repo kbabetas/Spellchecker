@@ -88,7 +88,7 @@ public class Menu {
 
 			System.out.println("\nError: You can only use 1 or 2");
 			getMenu();
-		} /* end of exception*/
+		} /* end of InputMisMatch Exception*/
 
 		return language;
 
