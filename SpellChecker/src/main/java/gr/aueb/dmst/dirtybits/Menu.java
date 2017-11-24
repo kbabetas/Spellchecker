@@ -18,7 +18,7 @@ public class Menu {
 	
 	
 	public static void main(String args[]) {
-
+		setEncoding();
 		Spellcheck Spell = new Spellcheck();
 		language = getMenu();
 		String text = null;
@@ -223,10 +223,15 @@ public class Menu {
 	* display greek characters at all computer systems
 	*/
 	public static void setEncoding() {
-		
-		ProcessBuilder builder = new ProcessBuilder("cmd.exe", "/c", "chcp", "737").inheritIO();
-		Process p = builder.start();
-		p.waitFor();
+		try {
+			ProcessBuilder builder = new ProcessBuilder("cmd.exe", "/c", "chcp", "737").inheritIO();
+			Process p = builder.start();
+			p.waitFor();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} catch (IOException ioe) {
+			ioe.printStackTrace();
+		}
 	}
 	
 
