@@ -218,6 +218,17 @@ public class Menu {
 		return numberOfLines;
 	} //end of method calculateLines
 	
+	/**
+	* This method sets the cmd's encoding to cp737 in order to
+	* display greek characters at all computer systems
+	*/
+	public static void setEncoding() {
+		
+		ProcessBuilder builder = new ProcessBuilder("cmd.exe", "/c", "chcp", "737").inheritIO();
+		Process p = builder.start();
+		p.waitFor();
+	}
+	
 
 
 }
