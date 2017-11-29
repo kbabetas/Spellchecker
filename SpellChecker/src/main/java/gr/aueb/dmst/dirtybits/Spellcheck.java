@@ -4,11 +4,11 @@ import java.util.Map;
 import java.util.TreeMap;
 
 /** 
-  *	In this class the text given is splitted into words. These words are spell-checked one to one.
-  *	If misspelled words are found there is a proposal of words that might correct the wrong ones.
-  *	Then, some words from the dictionary are proposed to correct the wrong ones.
-  *	@author Βούγιας,Γεωργούλη,Κακουλάκη,Λαζαρίδη,Λαζαρίδου,Μπαμπέτας,Παυλίδη,Σπέρτου
-  */ 
+ * In this class the text given is splitted into words. These words are spell-checked one to one.
+ * If misspelled words are found there is a proposal of words that might correct the wrong ones.
+ * Then, some words from the dictionary are proposed to correct the wrong ones.
+ * @author Βούγιας,Γεωργούλη,Κακουλάκη,Λαζαρίδη,Λαζαρίδου,Μπαμπέτας,Παυλίδη,Σπέρτου
+ */ 
 public class Spellcheck {
 	
 	/**
@@ -57,8 +57,8 @@ public class Spellcheck {
 		}	
 	}
 
-	/**
-	  *	This method displays an array
+	 /**
+	  * This method displays an array
 	  */
 	private static void printArray(String[] array) {    
 
