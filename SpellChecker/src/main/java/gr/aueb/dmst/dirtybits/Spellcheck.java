@@ -4,16 +4,26 @@ import java.util.Map;
 import java.util.TreeMap;
 
 /** 
-  *	In this class the user inserts a text that is splitted into words and these words are spell-checked one to one.
-  *	if a wrong word exists, it is inserted in an array.
+  *	In this class the text given is splitted into words. These words are spell-checked one to one.
+  *	If misspelled words are found there is a proposal of words that might correct the wrong ones.
+  *	Then, some words from the dictionary are proposed to correct the wrong ones.
   *	@author Βούγιας,Γεωργούλη,Κακουλάκη,Λαζαρίδη,Λαζαρίδου,Μπαμπέτας,Παυλίδη,Σπέρτου
   */ 
 public class Spellcheck {
 	
-	
+	/**
+	 * This method splits the text into words.
+	 * The array words is created and contains the splitted words.
+	 * A map is created and contains the words of the dictionary in the selected language.
+	 * The array wrongwords is created and contains the misspelled words.
+	 * The method displays whether there are misspelled words or not.
+	 * 
+	 * @param language is an integer that depicts the language (Greek or English) that the user chose.
+	 * @param text is the string that the user either typed or gave through a file.
+	 */
 	public static void spellcheck(int language, String text) {
 		
-		String[] words = text.split("[^a-zA-Zα-ωΑ-Ωά-ώΐ]+"); /* the String is splitted in words */
+		String[] words = text.split("[^a-zA-Zα-ωΑ-Ωά-ώΐ]+"); /* the String is splitted inτο words */
 		
 		System.out.printf("\n\n");
 		
@@ -60,11 +70,15 @@ public class Spellcheck {
 	} /* end of the method printArray */
 
 	
-	/** 
-	  *	Σύγκριση κάθε λέξης του πίνακα splittedArray με το treeMap που περιέχει το λεξικό, 
-	  *	έπειτα γεμίζεται ένας τρίτος με τις λανθασμένες λέξεις.
-	  *	@return the array with the wrong words found; null array if no wrong words are found.
-	  */			
+				
+	/**
+	 * This method compares each word from the array words with the treeMap that includes the dictionary.
+	 * If there are wrong words found, words from the dictionary are being proposed to correct the spelling mistake.
+	 * @param words is the array that contains the splitted words from the text given.
+	 * @param dictionary the map that contains the words of the dictionary in the selected language.
+	 * @param language is an integer that depicts the language (Greek or English) that the user chose.
+	 * @return the array with the wrong words found; null array if no wrong words are found.
+	 */		
 	private static String[] treeSearch(String [] words, Map<Integer, String> dictionary, int language) {
 		
 		String[] wrongArray = new String[words.length + 1];
@@ -99,7 +113,12 @@ public class Spellcheck {
 		return wrongArray;
 	}
 
-
+	/**
+	 * This method calculates the number of the changes needed so that two strings are equal.
+	 * @param s1 is the first String.
+	 * @param s2 is the second String.
+	 * @return an integer with the number of the changes needed so that the strings are equal.
+	 */
 	public static int LevenshteinDistance(String s1, String s2) {
 	//upologizei poses allages xreiazonte gia na ginoun ta duo string idia
 		int sl1 = s1.length();
@@ -138,13 +157,24 @@ public class Spellcheck {
 	 	}
 		return dis[sl1][sl2];
  	}
-
+	
+	/**
+	 * This method finds the similarity of two Strings.
+	 * @param s1 is the first String.
+	 * @param s2 is the second String.
+	 * @return a double with the percentage of similarity of the two strings.
+	 */
 	public static double percSimilarity(String s1, String s2) {
 		int d = LevenshteinDistance(s1, s2);
 		double sim = (double) (((s1.length() + s2.length()) - d) / (double) (s1.length() + s2.length()) * 100);
 		return sim;
  	}
-
+	
+	/**
+	 * This method proposes a specific word if the percentage of similarity of two strings is over the 75%
+	 * @param s1 is the first String.
+	 * @param s2 is the second String.
+	 */
 	public static void giveOptions(String s1, String s2) {
  		double v = percSimilarity(s1, s2);
  		if (v > 85) {
