@@ -178,7 +178,6 @@ public class Spellcheck {
 	public static void giveOptions(String s1, String s2) {
  		double v = percSimilarity(s1, s2);
  		if (v > 85) {
-		//if the percentage of similarity is over the 75%, the program proposes the specific word
  			System.out.println(s2);
 		}
 	}					
