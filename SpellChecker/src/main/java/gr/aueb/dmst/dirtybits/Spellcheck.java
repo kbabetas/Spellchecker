@@ -5,8 +5,7 @@ import java.util.TreeMap;
 
 /** 
  * In this class the text given is splitted into words. These words are spell-checked one to one.
- * If misspelled words are found there is a proposal of words that might correct the wrong ones.
- * Then, some words from the dictionary are proposed to correct the wrong ones.
+ * If any words are misspelled then suggestions are made to correct them based on the existing dictionary.
  * @author Βούγιας,Γεωργούλη,Κακουλάκη,Λαζαρίδη,Λαζαρίδου,Μπαμπέτας,Παυλίδη,Σπέρτου
  */ 
 public class Spellcheck {
