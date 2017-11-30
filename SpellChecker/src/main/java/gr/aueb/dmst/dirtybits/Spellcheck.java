@@ -6,7 +6,7 @@ import java.util.TreeMap;
 /** 
  * In this class the text given is splitted into words. These words are spell-checked one to one.
  * If any words are misspelled then suggestions are made to correct them based on the existing dictionary.
- * @author Βούγιας,Γεωργούλη,Κακουλάκη,Λαζαρίδη,Λαζαρίδου,Μπαμπέτας,Παυλίδη,Σπέρτου
+ * @author Bougias, Georgouli, Kakoulaki, Lasaridi, Lazaridou, Babetas, Pavlidi, Spertou
  */ 
 public class Spellcheck {
 	
