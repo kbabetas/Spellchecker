@@ -36,9 +36,6 @@ public class Menu {
 	 */
 	public static int getMenu() {
 		
-		Scanner input = new Scanner(System.in);
-		int language = 0;
-		int selection;
 		System.out.println("Press 1 for Greek/ Πιέστε 1 για ελληνικά:\nPress 2 for English/ Πιέστε 2 για αγγλικά:\n");
 
 		try {
@@ -67,23 +64,23 @@ public class Menu {
 					} else {
 						System.out.println("Πληκτρολόγησε το path που βρίσκεται το αρχείο και θα ελέγξουμε άμα είναι ορθογραφικά σωστό:\n");
 					}
-				} else {
-					System.out.println("Press 1 if you want to test the spelling of a text that you will type:");
-					System.out.println("Press 2 if you want to test the spelling of a file that you will choose:\n");
+			} else {
+				System.out.println("Press 1 if you want to test the spelling of a text that you will type:");
+				System.out.println("Press 2 if you want to test the spelling of a file that you will choose:\n");
 
+				selection = input.nextInt();
+				System.out.println();
+				while ((selection != 1) && (selection != 2)) {
+					System.out.print("Please press 1 or 2\n");
 					selection = input.nextInt();
 					System.out.println();
-					while ((selection != 1) && (selection != 2)) {
-						System.out.print("Please press 1 or 2\n");
-						selection = input.nextInt();
-						System.out.println();
 		      		}
-					if (selection == 1) {
-						System.out.println("Type a text in English and we will check if the spelling is correct:\n\n");
-					} else {
-						System.out.println("Please insert the path of the file and we will check if the spelling is correct:\n");
-					}
+				if (selection == 1) {
+					System.out.println("Type a text in English and we will check if the spelling is correct:\n\n");
+				} else {
+					System.out.println("Please insert the path of the file and we will check if the spelling is correct:\n");
 				}
+			}
 		} catch (Exception e) {
 
 			System.out.println("\nError: You can only use 1 or 2");
@@ -133,6 +130,7 @@ public class Menu {
 			}
 		} catch (IOException e) {
 			System.out.println("Sorry, we cannot find your text file. Please try again." );
+			Runtime.getRuntime().exit(1);
 		}
 			
 		String newtext= text.substring(4);
