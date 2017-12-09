@@ -20,12 +20,12 @@ public class Menu {
 		language = getMenu();
 		
 		while(language!=3) {
-		 	String text = typereader();
+		 	String text = typeReader();
 			Spell.spellcheck(language,text);
 			System.out.printf("\n\n");
 			language = getMenu();
 			if(language!=3) {
-				String newtext = typereader();
+				String newtext = typeReader();
 				Spell.spellcheck(language,newtext);
 				language = getMenu();
 			}
@@ -207,7 +207,7 @@ public class Menu {
 	
 	
 	
-	public static String typereader() {
+	public static String typeReader() {
 		String text = null;
 		if(selection == 1) {
 		text = getInput();
