@@ -26,7 +26,8 @@ public class Spellcheck {
 		
 		System.out.printf("\n\n");
 		
-		Map<Integer, String> dictionary = BuildDictionary.buildDictionary(language);
+		BuildDictionary buildDictionary =  new BuildDictionary(language);
+		Map<Integer, String> dictionary = buildDictionary.getDictionary();
 		
 		String[] wrongwords = treeSearch(words, dictionary, language);   /* search inside the treemap */
 		
