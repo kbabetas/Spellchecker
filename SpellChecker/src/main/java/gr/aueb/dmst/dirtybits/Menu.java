@@ -41,15 +41,15 @@ public class Menu {
 	 */
 	public static int getMenu() {
 		
-		System.out.println("Press 1 for Greek/ Πιέστε 1 για ελληνικά:\nPress 2 for English/ Πιέστε 2 για αγγλικά:\n");
+		System.out.println("Press 1 for Greek/ Πιέστε 1 για ελληνικά:\nPress 2 for English/ Πιέστε 2 για αγγλικά:\n Press 3 to exit/ Πιέστε 3 για έξοδο\n");
 
 		try {
 			language = input.nextInt();
 			System.out.println();
 
-			while ((language != 1) && (language != 2)) {
-		       		System.out.print("Please press 1 or 2\n");
-				System.out.print("Press 1 for Greek:\nPress 2 for English:\n");
+			while ((language != 1) && (language != 2) && (language != 3) {
+		       		System.out.print("Please press 1 or 2 or 3\n");
+				System.out.print("Press 1 for Greek:\nPress 2 for English:\n Press 3 to exit\n");
 				language = input.nextInt();
 		  	}
 
@@ -69,7 +69,7 @@ public class Menu {
 					} else {
 						System.out.println("Πληκτρολόγησε το path που βρίσκεται το αρχείο και θα ελέγξουμε άμα είναι ορθογραφικά σωστό:\n");
 					}
-			} else {
+			} else if (language ==2 ){
 				System.out.println("Press 1 if you want to test the spelling of a text that you will type:");
 				System.out.println("Press 2 if you want to test the spelling of a file that you will choose:\n");
 
@@ -85,6 +85,8 @@ public class Menu {
 				} else {
 					System.out.println("Please insert the path of the file and we will check if the spelling is correct:\n");
 				}
+			} else {
+				Runtime.getRuntime().exit(1);
 			}
 		} catch (Exception e) {
 
