@@ -2,6 +2,7 @@ package gr.aueb.dmst.dirtybits;
 
 import java.util.Map;
 import java.util.TreeMap;
+import java.util.ArrayList;
 
 /** 
  * In this class the text given is splitted into words. These words are spell-checked one to one.
@@ -29,17 +30,19 @@ public class Spellcheck {
 		BuildDictionary buildDictionary =  new BuildDictionary(language);
 		Map<Integer, String> dictionary = buildDictionary.getDictionary();
 		
-		String[] wrongwords = treeSearch(words, dictionary, language);   /* search inside the treemap */
+		ArrayList<String> wrongwords = treeSearch(words, dictionary, language);   /* search inside the treemap */
 		
 		System.out.printf("\n");
 		
 		int flag = 0;
-
-		for (int i = 0; i < wrongwords.length; i++) {
-			if (wrongwords[i] != null) {
+		
+		for (int i = 0; i < wrongwords.size();i++) {
+			if (wrongwords.get(i)!= null) {
 				flag = 1;
 			}
 		}
+
+		
 
 		if(flag == 0) {
 			if(language == 1) {
@@ -53,7 +56,11 @@ public class Spellcheck {
 			} else {
 				System.out.println("The wrong words are:\n\n");
 			}
-			printArray(wrongwords);
+			for(int i = 0; i < wrongwords.size(); i++) {
+				    System.out.print(wrongwords.get(i));
+				    System.out.print("\n");
+			}
+			
 		}	
 	}
 
@@ -79,18 +86,18 @@ public class Spellcheck {
 	 * @param language is an integer that depicts the language (Greek or English) that the user chose.
 	 * @return the array with the wrong words found; null array if no wrong words are found.
 	 */		
-	private static String[] treeSearch(String [] words, Map<Integer, String> dictionary, int language) {
+	private static ArrayList<String> treeSearch(String [] words, Map<Integer, String> dictionary, int language) {
 		
-		String[] wrongArray = new String[words.length + 1];
-		int k = 0;
+		ArrayList<String> wrongArray = new ArrayList<String>();
+		//int k = 0;
 		
 		for(int i = 0; i < words.length; i++) {
 
 			if(!dictionary.containsValue(words[i])) {
 	
 				if(!dictionary.containsValue(words[i].toLowerCase())) {
-					wrongArray[k] = words[i];
-					k++;
+					wrongArray.add(words[i]);
+					//k++;
 					if (language == 1) {
 						System.out.println("Προτεινόμενες λέξεις για: " +words[i] +" : ");
 					} else {
