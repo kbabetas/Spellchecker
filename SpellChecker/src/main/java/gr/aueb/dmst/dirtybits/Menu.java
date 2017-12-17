@@ -41,15 +41,15 @@ public class Menu {
 	 */
 	public static int getMenu() {
 		
-		System.out.println("Press 1 for Greek/ Πιέστε 1 για ελληνικά:\nPress 2 for English/ Πιέστε 2 για αγγλικά:\n Press 3 to exit/ Πιέστε 3 για έξοδο\n");
+		System.out.println("Press 1 for Greek/ Πιέστε 1 για ελληνικά:\nPress 2 for English/ Πιέστε 2 για αγγλικά:\nPress 3 to exit/ Πιέστε 3 για έξοδο:\n");
 
 		try {
 			language = input.nextInt();
 			System.out.println();
 
-			while ((language != 1) && (language != 2) && (language != 3) {
+			while ((language != 1) && (language != 2) && (language != 3)) {
 		       		System.out.print("Please press 1 or 2 or 3\n");
-				System.out.print("Press 1 for Greek:\nPress 2 for English:\n Press 3 to exit\n");
+				System.out.print("Press 1 for Greek:\nPress 2 for English:\nPress 3 to exit\n");
 				language = input.nextInt();
 		  	}
 
