@@ -26,8 +26,8 @@ public class BuildDictionary {
 
 		try {
 			BufferedReader reader;
-			reader = new BufferedReader(new InputStreamReader(new FileInputStream(upOne + "/resources/" + DICTIONARIES[language - 1]),"UTF-8")); // for non maven use
-			//reader = new BufferedReader(new InputStreamReader(new FileInputStream(upOne + "/src/main/resources/" + DICTIONARIES[language - 1]),"UTF-8")); for maven
+			//reader = new BufferedReader(new InputStreamReader(new FileInputStream(upOne + "/resources/" + DICTIONARIES[language - 1]),"UTF-8")); // for non maven use
+			reader = new BufferedReader(new InputStreamReader(new FileInputStream(upOne + "/src/main/resources/" + DICTIONARIES[language - 1]),"UTF-8")); //for maven
 
            	String word;
             int key = 0;
