@@ -7,6 +7,8 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.FileReader; 
 import java.io.IOException;
+import java.io.PrintStream;
+import java.io.UnsupportedEncodingException;
 
 public class Menu {
 	
@@ -15,7 +17,13 @@ public class Menu {
 	private static Scanner input = new Scanner(System.in);
 	
 	public static void main(String args[]) {
-		setEncoding();
+		//setEncoding();
+		try {
+			System.setOut(new PrintStream(System.out, true, "cp737"));
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+		GreekEncodingCMD.main(null);
 		Spellcheck Spell = new Spellcheck();
 		language = getMenu();
 		
