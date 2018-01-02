@@ -7,7 +7,14 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.io.UnsupportedEncodingException;
-
+/**
+ * This class contains the main method
+ * It provides the user with the option to either type a text or
+ * give a file to check the spelling from
+ * 
+ * @author IoannisVougias, marininapav, MarinaKakoulaki, javalicious, kbabetas
+ * 
+ */
 public class Menu {
 
 	private static int selection; // shows how the user selects to give the text
@@ -112,7 +119,7 @@ public class Menu {
 
 			System.out.println("\nError: You can only use 1 or 2");
 			getMenu();
-		} /* end of InputMisMatch Exception */
+		}
 
 		return language;
 
@@ -134,7 +141,7 @@ public class Menu {
 
 	/**
 	 * 
-	 * This method asks from the user the path of the text file and returns it's
+	 * This method asks from the user the path of the text file and returns its
 	 * content in a String
 	 * 
 	 * @return returns a String with the content of the text file
