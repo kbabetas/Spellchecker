@@ -3,6 +3,8 @@
 
 Spellchecker is a Java application which checks the spelling in Greek or English. It can check the spelling either on a text the user has typed or on a provided txt file.
 
+Spellchecker is a team project assigned by Diomidis Spinellis for the course of Programming II at the Department of Management Science and Technology (DMST) of the Athens University of Economics and Business (AUEB).
+
 ## Authors
 
 * **8160017 Βούγιας Ιωάννης - IoannisVougias**
