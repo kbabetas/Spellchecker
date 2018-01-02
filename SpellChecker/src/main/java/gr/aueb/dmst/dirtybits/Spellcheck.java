@@ -8,8 +8,7 @@ import java.util.ArrayList;
  * spell-checked one to one. If any words are misspelled then suggestions are
  * made to correct them based on the existing dictionary.
  * 
- * @author Vougias, Georgouli, Kakoulaki, Lasaridi, Lazaridou, Babetas, Pavlidi,
- *         Spertou
+ * @author IoannisVougias, ioannalazaridou
  */
 public class Spellcheck {
 
@@ -18,7 +17,7 @@ public class Spellcheck {
 	 * contains the splitted words. A map is created and contains the words of
 	 * the dictionary in the selected language. The array wrongwords is created
 	 * and contains the misspelled words. The method displays whether there are
-	 * misspelled words or not.
+	 * any misspelled words or not.
 	 * 
 	 * @param language
 	 *            is an integer that depicts the language (Greek or English)
@@ -84,8 +83,8 @@ public class Spellcheck {
 
 	/**
 	 * This method compares each word from the array words with the treeMap that
-	 * includes the dictionary. If there are wrong words found, words from the
-	 * dictionary are being proposed to correct the spelling mistake.
+	 * includes the dictionary. If wrong words are found, suggestions from the
+	 * dictionary are being proposed to correct the spelling mistake(s).
 	 * 
 	 * @param words
 	 *            is the array that contains the splitted words from the text
@@ -196,7 +195,7 @@ public class Spellcheck {
 
 	/**
 	 * This method proposes a specific word if the percentage of similarity of
-	 * two strings is over the 75%
+	 * two strings is over the 85%
 	 * 
 	 * @param s1
 	 *            is the first String.
