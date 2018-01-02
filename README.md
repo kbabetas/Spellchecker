@@ -1,7 +1,7 @@
 # Spellchecker
 ### Team Name: **Dirty Bits**
 
-Spellchecker is a JAVA application which checks the spelling in Greek or English. It can check the spelling either on a text the user has typed or on a provided txt file.
+Spellchecker is a Java application which checks the spelling in Greek or English. It can check the spelling either on a text the user has typed or on a provided txt file.
 
 ## Authors
 
@@ -41,6 +41,7 @@ java -jar Spellchecker-1.0-SNAPSHOT.jar
 ```
 
 
-## Built With
+## Requirements
 
+* [Java](http://www.oracle.com/technetwork/java/javase/downloads/jdk9-downloads-3848520.html) - Java jdk
 * [Maven](https://maven.apache.org/) - Dependency Management
