@@ -16,7 +16,6 @@ public class Menu {
 	private static Scanner input = new Scanner(System.in);
 
 	public static void main(String args[]) {
-		// setEncoding();
 		try {
 			System.setOut(new PrintStream(System.out, true, "cp737"));
 		} catch (UnsupportedEncodingException e) {
@@ -48,8 +47,9 @@ public class Menu {
 	 */
 	public static int getMenu() {
 
-		System.out
-				.println("Press 1 for Greek/ Πιέστε 1 για ελληνικά:\nPress 2 for English/ Πιέστε 2 για αγγλικά:\nPress 3 to exit/ Πιέστε 3 για έξοδο:\n");
+		System.out.println("Press 1 for Greek/ Πιέστε 1 για ελληνικά:");
+		System.out.println("Press 2 for English/ Πιέστε 2 για αγγλικά:");
+		System.out.println("Press 3 to exit/ Πιέστε 3 για έξοδο:\n");
 
 		try {
 			language = input.nextInt();
@@ -57,16 +57,16 @@ public class Menu {
 
 			while ((language != 1) && (language != 2) && (language != 3)) {
 				System.out.print("Please press 1 or 2 or 3\n");
-				System.out
-						.print("Press 1 for Greek:\nPress 2 for English:\nPress 3 to exit\n");
+				System.out.print("Press 1 for Greek:\n"
+						+ "Press 2 for English:\nPress 3 to exit\n");
 				language = input.nextInt();
 			}
 
 			if (language == 1) {
-				System.out
-						.println("Πληκτρολόγησε 1 άμα θέλεις να γράψεις ένα δικό σου  κείμενο:");
-				System.out
-						.println("Πληκτρολόγησε 2 άμα θέλεις να ελέγξεις ορθογραφικά ένα αρχείο της επιλογής σου:\n");
+				System.out.println("Πληκτρολόγησε 1 άμα θέλεις να γράψεις"
+						+ " ένα δικό σου  κείμενο:");
+				System.out.println("Πληκτρολόγησε 2 άμα θέλεις να ελέγξεις"
+						+ " ορθογραφικά ένα αρχείο της επιλογής σου:\n");
 
 				selection = input.nextInt();
 				System.out.println();
@@ -76,17 +76,19 @@ public class Menu {
 					System.out.println();
 				}
 				if (selection == 1) {
-					System.out
-							.println("Πληκτρολόγησε ένα κείμενο στα ελληνικά και θα ελέγξουμε άμα είναι ορθογραφικά σωστό:\n\n");
+					System.out.println("Πληκτρολόγησε ένα κείμενο στα "
+							+ "ελληνικά και θα ελέγξουμε άμα είναι "
+							+ "ορθογραφικά σωστό:\n\n");
 				} else {
-					System.out
-							.println("Πληκτρολόγησε το path που βρίσκεται το αρχείο και θα ελέγξουμε άμα είναι ορθογραφικά σωστό:\n");
+					System.out.println("Πληκτρολόγησε το path που "
+							+ "βρίσκεται το αρχείο και θα ελέγξουμε "
+							+ "άμα είναι ορθογραφικά σωστό:\n");
 				}
 			} else if (language == 2) {
-				System.out
-						.println("Press 1 if you want to test the spelling of a text that you will type:");
-				System.out
-						.println("Press 2 if you want to test the spelling of a file that you will choose:\n");
+				System.out.println("Press 1 if you want to test the "
+						+ "spelling of a text that you will type:");
+				System.out.println("Press 2 if you want to test the "
+						+ "spelling of a file that you will choose:\n");
 
 				selection = input.nextInt();
 				System.out.println();
@@ -96,11 +98,12 @@ public class Menu {
 					System.out.println();
 				}
 				if (selection == 1) {
-					System.out
-							.println("Type a text in English and we will check if the spelling is correct:\n\n");
+					System.out.println("Type a text in English and we "
+							+ "will check if the spelling is correct:\n\n");
 				} else {
-					System.out
-							.println("Please insert the path of the file and we will check if the spelling is correct:\n");
+					System.out.println("Please insert the path of the "
+							+ "file and we will check if the spelling "
+							+ "is correct:\n");
 				}
 			} else {
 				Runtime.getRuntime().exit(1);
@@ -155,11 +158,10 @@ public class Menu {
 				System.out.println("Το αρχείο διαβάστηκε επιτυχώς");
 			}
 		} catch (IOException e) {
-			System.out
-					.println("Sorry, we cannot find your text file. Please try again.");
-			Runtime.getRuntime().exit(1);
+			System.out.println("Sorry, we cannot find your text "
+					+ "file. Please try again.");
+			getMenu();
 		}
-
 		String newtext = text.substring(4);
 
 		if (language == 2) {
@@ -228,3 +230,4 @@ public class Menu {
 		return text;
 	}
 }
+
