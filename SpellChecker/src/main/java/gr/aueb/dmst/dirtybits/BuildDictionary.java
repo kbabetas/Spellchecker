@@ -11,7 +11,7 @@ import java.io.File;
 /**
  * This class converts the txt dictionary to a Treemap
  * 
- * @author Konstantinos
+ * @author kbabetas
  * 
  */
 public class BuildDictionary {
