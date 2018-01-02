@@ -2,6 +2,13 @@ package gr.aueb.dmst.dirtybits;
 
 import java.io.IOException;
 
+/**
+ * This class sets the console's encoding to cp737
+ * in order to show greek character
+ * 
+ * @author kbabetas, javalicious
+ * 
+ */
 public class GreekEncodingCMD {
 
 	public static void main(String[] args) {
