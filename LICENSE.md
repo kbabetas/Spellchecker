@@ -1,6 +1,7 @@
 MIT License
 
-Copyright (c) 2018 Konstantinos Babetas
+Copyright (c) 2018 Babetas Konstantinos, Georgouli Christianna, Kakoulaki Marina, 
+Lazaridi Ioanna, Lazaridou Ioanna, Pavlidi Maria Marina, Spertou Chrysa, Vougias Ioannis
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
