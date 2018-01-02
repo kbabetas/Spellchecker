@@ -84,5 +84,10 @@ Press 3 to exit/ Πιέστε 3 για έξοδο:
 
 ## Requirements
 
-* [Java](http://www.oracle.com/technetwork/java/javase/downloads/jdk9-downloads-3848520.html) - Java jdk
+* [Java](http://www.oracle.com/technetwork/java/javase/downloads/jdk9-downloads-3848520.html) - Java SE Development Kit 9
 * [Maven](https://maven.apache.org/) - Dependency Management
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
