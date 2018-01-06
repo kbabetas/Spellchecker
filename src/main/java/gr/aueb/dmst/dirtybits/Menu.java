@@ -182,12 +182,12 @@ public class Menu {
 	} // end of method getFileReader
 
 	/**
-	 * This method returns all the lines from the text file then these lines
-	 * will be held in the array textOfData.
-	 * 
+	 *  This method returns all the lines from the text file then these lines
+	 *   will be held in the array textOfData.
+	 * @param path is the path of the text file the user wants check the spelling from.
 	 * @return a String array with the lines of the text file.
-	 * @throws IOException
 	 *             will throw errors in the line.
+	 * @throws IOException
 	 */
 	public static String[] getFile(String path) throws IOException {
 
@@ -209,7 +209,7 @@ public class Menu {
 
 	/**
 	 * This method calculates the number of lines of a text file.
-	 * 
+	 * @param path is the path of the text file the user wants check the spelling from.
 	 * @return returns the number of lines of a text file.
 	 * @throws IOException
 	 */
