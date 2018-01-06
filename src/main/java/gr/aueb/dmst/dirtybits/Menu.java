@@ -188,6 +188,7 @@ public class Menu {
 	 * @return a String array with the lines of the text file.
 	 *             will throw errors in the line.
 	 * @throws IOException
+	 *		throws IOException
 	 */
 	public static String[] getFile(String path) throws IOException {
 
@@ -196,9 +197,9 @@ public class Menu {
 
 		int numberOfLines = calculateLines(path);
 		String[] textOfData = new String[numberOfLines]; // each position in
-															// textData array
-															// can hold one line
-															// of text.
+		// textData array
+		// can hold one line
+		// of text.
 
 		for (int i = 0; i < numberOfLines; i++) {
 			textOfData[i] = textReader.readLine();
@@ -212,6 +213,7 @@ public class Menu {
 	 * @param path is the path of the text file the user wants check the spelling from.
 	 * @return returns the number of lines of a text file.
 	 * @throws IOException
+	 *		throws IOException
 	 */
 	public static int calculateLines(String path) throws IOException {
 
