@@ -36,7 +36,7 @@ There are two install options: a bat file or a self-contained jar file.
 
 To start from the bat file, simply double click on the ``` run_Spellchecker.bat ```
 
-If you would like to run the Spellchecker-1.0-SNAPSHOT.jar, change the directory to Spellchecker\target, then execute:
+If you would like to run the ```Spellchecker-1.0-SNAPSHOT.jar ```, change the directory to ```Spellchecker\target```, then execute:
 
 ``` 
 java -jar Spellchecker-1.0-SNAPSHOT.jar
@@ -87,7 +87,7 @@ There are two ways to run the javadocs of this project: a bat file or manually t
 
 To start from the bat file, simply double click on the ``` run_Javadoc.bat ```
 
-If you would like to run javadocs manually through the console, change the directory to SpellChecker\src\main\java, then execute:
+If you would like to run javadocs manually through the console, change the directory to ```SpellChecker\src\main\java ```, then execute:
 
 ``` 
 javadoc -encoding cp737 -d ..\..\..\doc gr.aueb.dmst.dirtybits
