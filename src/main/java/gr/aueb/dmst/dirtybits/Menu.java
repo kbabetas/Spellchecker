@@ -7,10 +7,11 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.io.UnsupportedEncodingException;
+
 /**
- * This class contains the main method
- * It provides the user with the option to either type a text or
- * give a file to check the spelling from
+ * This class contains the main method.
+ * It provides the user with the option to either type
+ * a text or give a file to check the spelling from.
  * 
  * @author IoannisVougias, marininapav, MarinaKakoulaki, javalicious, kbabetas
  * 
@@ -22,7 +23,7 @@ public class Menu {
 									// English
 	private static Scanner input = new Scanner(System.in);
 
-	public static void main(String args[]) {
+	public static void main(String[] args) {
 		try {
 			System.setOut(new PrintStream(System.out, true, "cp737"));
 		} catch (UnsupportedEncodingException e) {
@@ -47,9 +48,9 @@ public class Menu {
 	}
 
 	/**
-	 * In this method the user selects either Greek or English and also selects
-	 * the way the text is inserted
-	 * 
+	 * In this method the user selects either Greek or English and
+	 * also selects the way the text is inserted.
+	 *
 	 * @return an integer variable that contains the language the user selected
 	 */
 	public static int getMenu() {
@@ -123,8 +124,8 @@ public class Menu {
 
 		return language;
 
-	} 
-	
+	}
+
 	/**
 	 * With this method you can read Strings in Greek.
 	 *
@@ -141,7 +142,7 @@ public class Menu {
 		} catch (Exception e) {
 			return "Error: " + e.getMessage();
 		}
-	} 
+	}
 
 	/**
 	 * 
@@ -157,11 +158,9 @@ public class Menu {
 		String text = null;
 		try {
 			String[] printLines = getFile(path);
-
 			for (int i = 0; i < printLines.length; i++) {
 				text += " " + printLines[i];
 			}
-
 			System.out.println();
 			if (language == 2) {
 				System.out.println("The file was read successfully");
@@ -183,15 +182,19 @@ public class Menu {
 
 		System.out.println(newtext);
 		return newtext;
-	} 
+	}
 
 	/**
-	 *  This method returns all the lines from the text file then these lines
-	 *   will be held in the array textOfData.
-	 * @param path is the path of the text file the user wants check the spelling from.
+	 * This method returns all the lines from the text file then
+	 * these lines will be held in the array textOfData.
+	 *
+	 * @param path
+	 *            is the path of the text file the user wants check the spelling
+	 *            from.
 	 * @return a String array with the lines of the text file.
-	 *            
-	 * @throws IOException will throw errors in the line.
+	 * 
+	 * @throws IOException
+	 *             will throw errors in the line.
 	 *
 	 */
 	public static String[] getFile(String path) throws IOException {
@@ -201,20 +204,21 @@ public class Menu {
 
 		int numberOfLines = calculateLines(path);
 		String[] textOfData = new String[numberOfLines]; // each position in
-		// textData array
-		// can hold one line
-		// of text.
+		// textData array can hold one line of text.
 
 		for (int i = 0; i < numberOfLines; i++) {
 			textOfData[i] = textReader.readLine();
 		}
 		textReader.close();
 		return textOfData;
-	} 
+	}
 
 	/**
 	 * This method calculates the number of lines of a text file.
-	 * @param path is the path of the text file the user wants check the spelling from.
+	 *
+	 * @param path
+	 *            is the path of the text file the user wants 
+	 *            check the spelling from.
 	 * @return returns the number of lines of a text file.
 	 * @throws IOException
 	 *
@@ -229,12 +233,12 @@ public class Menu {
 		}
 		textReader.close();
 		return numberOfLines;
-	} 
-	
-        /**
-	 * This method returns a text (either a typed one or a text given from a file)
-	 * 	that the user wants to check the spelling from.
-	 * 
+	}
+
+	/**
+	 * This method returns a text (either a typed one or a text given from a
+	 * file) that the user wants to check the spelling from.
+	 *
 	 * @return the text that will be spellchecked.
 	 */
 	public static String typeReader() {
