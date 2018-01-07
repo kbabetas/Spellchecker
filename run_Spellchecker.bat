@@ -5,5 +5,5 @@ cd
 
 cd "target"
 
-"%JAVA_HOME%\bin\java" -jar Spellchecker-1.0-SNAPSHOT.jar
+"%JAVA_HOME%\bin\java" -jar Spellchecker.jar
 pause
