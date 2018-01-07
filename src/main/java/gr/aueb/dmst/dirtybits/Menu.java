@@ -123,10 +123,14 @@ public class Menu {
 
 		return language;
 
-	} /* end of method getMenu */
-
+	} 
+	
+	/**
+	 * With this method you can read Strings in Greek.
+	 *
+	 * @return the text that the user typed.
+	 */
 	public static String getInput() {
-		/* with this method you can read Strings in Greek */
 
 		System.out.flush();
 		/* clear the memory */
@@ -137,7 +141,7 @@ public class Menu {
 		} catch (Exception e) {
 			return "Error: " + e.getMessage();
 		}
-	} /* end of method getGreekInput */
+	} 
 
 	/**
 	 * 
@@ -179,16 +183,16 @@ public class Menu {
 
 		System.out.println(newtext);
 		return newtext;
-	} // end of method getFileReader
+	} 
 
 	/**
 	 *  This method returns all the lines from the text file then these lines
 	 *   will be held in the array textOfData.
 	 * @param path is the path of the text file the user wants check the spelling from.
 	 * @return a String array with the lines of the text file.
-	 *             will throw errors in the line.
-	 * @throws IOException
-	 *		throws IOException
+	 *            
+	 * @throws IOException will throw errors in the line.
+	 *
 	 */
 	public static String[] getFile(String path) throws IOException {
 
@@ -206,14 +210,14 @@ public class Menu {
 		}
 		textReader.close();
 		return textOfData;
-	} // end of method getFile
+	} 
 
 	/**
 	 * This method calculates the number of lines of a text file.
 	 * @param path is the path of the text file the user wants check the spelling from.
 	 * @return returns the number of lines of a text file.
 	 * @throws IOException
-	 *		throws IOException
+	 *
 	 */
 	public static int calculateLines(String path) throws IOException {
 
@@ -225,8 +229,14 @@ public class Menu {
 		}
 		textReader.close();
 		return numberOfLines;
-	} // end of method calculateLines
-
+	} 
+	
+        /**
+	 * This method returns a text (either a typed one or a text given from a file)
+	 * 	that the user wants to check the spelling from.
+	 * 
+	 * @return the text that will be spellchecked.
+	 */
 	public static String typeReader() {
 		String text = null;
 		if (selection == 1) {
