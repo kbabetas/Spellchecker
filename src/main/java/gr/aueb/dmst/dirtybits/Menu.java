@@ -2,6 +2,7 @@ package gr.aueb.dmst.dirtybits;
 
 import java.util.Scanner;
 import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -159,7 +160,7 @@ public class Menu {
 		try {
 			String[] printLines = getFile(path);
 			for (int i = 0; i < printLines.length; i++) {
-				text += " " + printLines[i];
+				text += "" + printLines[i];
 			}
 			System.out.println();
 			if (language == 2) {
@@ -198,9 +199,9 @@ public class Menu {
 	 *
 	 */
 	public static String[] getFile(String path) throws IOException {
-
-		FileReader fr = new FileReader(path);
-		BufferedReader textReader = new BufferedReader(fr);
+		BufferedReader textReader;
+		textReader = new BufferedReader(new InputStreamReader(
+				new FileInputStream(path), "UTF-8"));
 
 		int numberOfLines = calculateLines(path);
 		String[] textOfData = new String[numberOfLines]; // each position in
@@ -253,4 +254,5 @@ public class Menu {
 		return text;
 	}
 }
+
 
