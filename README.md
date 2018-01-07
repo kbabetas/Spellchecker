@@ -97,8 +97,14 @@ After that, a folder named doc will be created in the Spellchecker folder and in
 
 ## Requirements
 
-* [Java](http://www.oracle.com/technetwork/java/javase/downloads/jdk9-downloads-3848520.html) - Java SE Development Kit 9
+* [Java](http://www.oracle.com/technetwork/java/javase/downloads/jdk9-downloads-3848520.html)
+* [Maven](https://maven.apache.org/)
+
+## Built With
+
 * [Maven](https://maven.apache.org/) - Dependency Management
+* [CheckStyle](http://checkstyle.sourceforge.net/) - Checking Code Standard
+* [FindBugs](http://findbugs.sourceforge.net/) - Static Analysis Tool for Bugs
 
 ## License
 
