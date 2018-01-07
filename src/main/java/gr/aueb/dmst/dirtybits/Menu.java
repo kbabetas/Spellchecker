@@ -172,6 +172,8 @@ public class Menu {
 			System.out.println("Sorry, we cannot find your text "
 					+ "file. Please try again.");
 			getMenu();
+			String ntext = getFileReader();
+			return ntext;
 		}
 		String newtext = text.substring(4);
 
