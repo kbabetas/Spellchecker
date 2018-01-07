@@ -4,42 +4,45 @@ import java.util.Map;
 import java.util.ArrayList;
 
 /**
- * In this class the text given is splitted into words. These words are
- * spell-checked one to one. If any words are misspelled then suggestions are
+ * In this class the text given is splitted into words.
+ * These words are spell-checked one to one.
+ * If any words are misspelled then suggestions are
  * made to correct them based on the existing dictionary.
- * 
+ *
  * @author IoannisVougias, ioannalazaridou
  */
 public class Spellcheck {
 
 	/**
-	 * This method splits the text into words. The array words is created and
-	 * contains the splitted words. A map is created and contains the words of
-	 * the dictionary in the selected language. The array wrongwords is created
-	 * and contains the misspelled words. The method displays whether there are
+	 * This method splits the text into words.
+	 * The array words is created and contains the
+	 * splitted words. A map is created and contains
+	 * the words of the dictionary in the selected language.
+	 * The array wrongwords is created and contains the 
+	 * misspelled words. The method displays whether there are
 	 * any misspelled words or not.
-	 * 
+	 *
 	 * @param language
-	 *            is an integer that depicts the language (Greek or English)
-	 *            that the user chose.
+	 *            is an integer that depicts the language
+	 *            (Greek or English) that the user chose.
 	 * @param text
-	 *            is the string that the user either typed or gave through a
-	 *            file.
+	 *            is the string that the user either typed
+	 *            or gave through a file.
 	 */
 	public static void spellcheck(int language, String text) {
 
 		String[] words = text.split("[^a-zA-Zα-ωΑ-Ωά-ώΐ]+");
-		/* the String is splitted inτο words */
+		/* the String is splitted inτο words. */
 
-		System.out.printf("\n\n");
+		System.out.println();
 
 		BuildDictionary buildDictionary = new BuildDictionary(language);
 		Map<Integer, String> dictionary = buildDictionary.getDictionary();
 
 		ArrayList<String> wrongwords = treeSearch(words, dictionary, language);
-		/* search inside the treemap */
+		/* search inside the treemap. */
 
-		System.out.printf("\n");
+		System.out.println();
 
 		int flag = 0;
 
@@ -70,22 +73,10 @@ public class Spellcheck {
 	}
 
 	/**
-	 * This method displays an array
-	 */
-	private static void printArray(String[] array) {
-
-		for (int i = 0; i < array.length; i++) {
-			if (array[i] != null) {
-				System.out.println(array[i]);
-			}
-		}
-	} /* end of the method printArray */
-
-	/**
 	 * This method compares each word from the array words with the treeMap that
 	 * includes the dictionary. If wrong words are found, suggestions from the
 	 * dictionary are being proposed to correct the spelling mistake(s).
-	 * 
+	 *
 	 * @param words
 	 *            is the array that contains the splitted words from the text
 	 *            given.
@@ -119,7 +110,7 @@ public class Spellcheck {
 
 					for (int j = 0; j < dictionary.size(); j++) {
 						String value = dictionary.get(j);
-						if ((words[i] != words[i].toLowerCase())
+						if ((!words[i].equals(words[i].toLowerCase()))
 								&& ((words[i].length() + value.length()) < 14)) {
 							giveOptions(words[i], value);
 							giveOptions(words[i].toLowerCase(), value);
@@ -137,7 +128,7 @@ public class Spellcheck {
 	/**
 	 * This method calculates the number of the changes needed so that two
 	 * strings are equal.
-	 * 
+	 *
 	 * @param s1
 	 *            is the first String.
 	 * @param s2
@@ -145,7 +136,7 @@ public class Spellcheck {
 	 * @return an integer with the number of the changes needed so that the
 	 *         strings are equal.
 	 */
-	public static int LevenshteinDistance(String s1, String s2) {
+	public static int levenshteinDistance(String s1, String s2) {
 		int sl1 = s1.length();
 		int sl2 = s2.length();
 		if (sl1 == 0) {
@@ -179,7 +170,7 @@ public class Spellcheck {
 
 	/**
 	 * This method finds the similarity of two Strings.
-	 * 
+	 *
 	 * @param s1
 	 *            is the first String.
 	 * @param s2
@@ -187,7 +178,7 @@ public class Spellcheck {
 	 * @return a double with the percentage of similarity of the two strings.
 	 */
 	public static double percSimilarity(String s1, String s2) {
-		int d = LevenshteinDistance(s1, s2);
+		int d = levenshteinDistance(s1, s2);
 		double sim = (double) (((s1.length() + s2.length()) - d)
 				/ (double) (s1.length() + s2.length()) * 100);
 		return sim;
@@ -195,8 +186,8 @@ public class Spellcheck {
 
 	/**
 	 * This method proposes a specific word if the percentage of similarity of
-	 * two strings is over the 85%
-	 * 
+	 * two strings is over the 85%.
+	 *
 	 * @param s1
 	 *            is the first String.
 	 * @param s2
@@ -208,4 +199,4 @@ public class Spellcheck {
 			System.out.println(s2);
 		}
 	}
-} /* end of class */
+}
