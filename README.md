@@ -105,6 +105,7 @@ After that, a folder named doc will be created in the Spellchecker folder and in
 * [Maven](https://maven.apache.org/) - Dependency Management
 * [CheckStyle](http://checkstyle.sourceforge.net/) - Checking Code Standard
 * [FindBugs](http://findbugs.sourceforge.net/) - Static Analysis Tool for Bugs
+* [Error-Prone](http://errorprone.info/) - Static Analysis Tool for Compile-Time Errors
 
 ## License
 
