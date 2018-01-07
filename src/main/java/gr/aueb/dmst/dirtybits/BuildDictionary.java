@@ -9,34 +9,33 @@ import java.io.InputStreamReader;
 import java.io.File;
 
 /**
- * This class converts the txt dictionary to a Treemap
+ * This class converts the txt dictionary to a Treemap.
  * 
  * @author kbabetas
  * 
  */
 public class BuildDictionary {
 
-	private static Map<Integer, String> dictionary = new TreeMap<Integer, String>();
+	private static Map<Integer, String> dictionary =
+			new TreeMap<Integer, String>();
 	private static final String[] DICTIONARIES = { "Greek Dictionary.txt",
 			"English Dictionary.txt" };
 
 	/**
-	 * This method encodes the dictionary and after puts every word in a treemap
+	 * This method puts the dictionary's words in a treemap.
 	 * 
 	 * @param language
-	 *            shows which of the two dictionaries the user will need
+	 *            shows which of the two dictionaries the user will need.
 	 * */
 	public BuildDictionary(int language) {
-		File upOne = new File(System.getProperty("user.dir")).getParentFile();
+		File upOne =
+				new File(System.getProperty("user.dir")).getParentFile();
 
 		try {
 			BufferedReader reader;
-			// reader = new BufferedReader(new InputStreamReader(new
-			// FileInputStream(upOne + "/resources/" + DICTIONARIES[language -
-			// 1]),"UTF-8")); // for non maven use
 			reader = new BufferedReader(new InputStreamReader(
 					new FileInputStream(upOne + "/src/main/resources/"
-							+ DICTIONARIES[language - 1]), "UTF-8")); 
+							+ DICTIONARIES[language - 1]), "UTF-8"));
 			String word;
 			int key = 0;
 			while ((word = reader.readLine()) != null) {
@@ -50,9 +49,9 @@ public class BuildDictionary {
 	}
 
 	/*
-	 * This method returns the dictionary
-	 * 
-	 * @return the appropriate dictionary in a treemap
+	 * This method returns the dictionary.
+	 *
+	 * @return the appropriate dictionary in a treemap.
 	 */
 	public Map<Integer, String> getDictionary() {
 		return BuildDictionary.dictionary;
