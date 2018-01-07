@@ -35,7 +35,7 @@ public class Menu {
 		while (language != 3) {
 			String text = typeReader();
 			Spell.spellcheck(language, text);
-			System.out.printf("\n\n");
+			System.out.println();
 			language = getMenu();
 			if (language != 3) {
 				String newtext = typeReader();
@@ -164,7 +164,7 @@ public class Menu {
 			} else {
 				System.out.println("Το αρχείο διαβάστηκε επιτυχώς");
 			}
-		} catch (IOException e) {
+		} catch (Exception e) {
 			System.out.println("Sorry, we cannot find your text "
 					+ "file. Please try again.");
 			getMenu();
@@ -234,7 +234,7 @@ public class Menu {
 		} else {
 			text = getFileReader();
 		}
-		System.out.printf("\n");
+		System.out.println();
 
 		return text;
 	}
