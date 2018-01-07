@@ -29,17 +29,17 @@ Primary build is supported with **maven**.
 mvn package
 ```
 Artifacts:
-* ``` Spellchecker/target/Spellchecker-1.0-SNAPSHOT.jar ```
+* ``` Spellchecker/target/Spellchecker.jar ```
 
 ## Installation
 There are two install options: a bat file or a self-contained jar file.
 
 To start from the bat file, simply double click on the ``` run_Spellchecker.bat ```
 
-If you would like to run the ```Spellchecker-1.0-SNAPSHOT.jar ```, change the directory to ```Spellchecker\target```, then execute:
+If you would like to run the ```Spellchecker.jar ```, change the directory to ```Spellchecker\target```, then execute:
 
 ``` 
-java -jar Spellchecker-1.0-SNAPSHOT.jar
+java -jar Spellchecker.jar
 ```
 
 After installation, the output should contain:
