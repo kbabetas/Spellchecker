@@ -107,6 +107,7 @@ After that, a folder named doc will be created in the Spellchecker folder and in
 * [FindBugs](http://findbugs.sourceforge.net/) - Static Analysis Tool for Bugs
 * [Error-Prone](http://errorprone.info/) - Static Analysis Tool for Compile-Time Errors
 * [PMD](http://pmd.sourceforge.net/pmd-5.0.0/) - Source Code Analyzer
+* [JUnit](http://junit.org/junit5) - Testing Unit Framework
 
 ## License
 
