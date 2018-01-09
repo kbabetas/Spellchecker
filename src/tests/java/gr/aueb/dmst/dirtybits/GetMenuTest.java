@@ -11,9 +11,9 @@ public class GetMenuTest {
 		Scanner input = new Scanner(System.in);
 		int language = 0;
 		int selection;
-		System.out.println("Press 1 for Greek/ Πιέστε 1 για ελληνικά:");
-		System.out.println("Press 2 for English/ Πιέστε 2 για αγγλικά:");
-		System.out.println("Press 3 to exit/ Πιέστε 3 για έξοδο:\n");
+		System.out.println("Press 1 for Greek/ Ξ ΞΉΞ­ΟƒΟ„Ξµ 1 Ξ³ΞΉΞ± ΞµΞ»Ξ»Ξ·Ξ½ΞΉΞΊΞ¬:");
+		System.out.println("Press 2 for English/ Ξ ΞΉΞ­ΟƒΟ„Ξµ 2 Ξ³ΞΉΞ± Ξ±Ξ³Ξ³Ξ»ΞΉΞΊΞ¬:");
+		System.out.println("Press 3 to exit/ Ξ ΞΉΞ­ΟƒΟ„Ξµ 3 Ξ³ΞΉΞ± Ξ­ΞΎΞΏΞ΄ΞΏ:\n");
 
 		try {
 
@@ -28,26 +28,26 @@ public class GetMenuTest {
 			}
 
 			if (language == 1) {
-				System.out.println("Πληκτρολόγησε 1 άμα θέλεις να γράψεις"
-						+ " ένα δικό σου  κείμενο:");
-				System.out.println("Πληκτρολόγησε 2 άμα θέλεις να ελέγξεις"
-						+ " ορθογραφικά ένα αρχείο της επιλογής σου:\n");
+				System.out.println("Ξ Ξ»Ξ·ΞΊΟ„ΟΞΏΞ»ΟΞ³Ξ·ΟƒΞµ 1 Ξ¬ΞΌΞ± ΞΈΞ­Ξ»ΞµΞΉΟ‚ Ξ½Ξ± Ξ³ΟΞ¬ΟΞµΞΉΟ‚"
+						+ " Ξ­Ξ½Ξ± Ξ΄ΞΉΞΊΟ ΟƒΞΏΟ… ΞΊΞµΞ―ΞΌΞµΞ½ΞΏ");
+				System.out.println("Ξ Ξ»Ξ·ΞΊΟ„ΟΞΏΞ»ΟΞ³Ξ·ΟƒΞµ 2 Ξ¬ΞΌΞ± ΞΈΞ­Ξ»ΞµΞΉΟ‚ Ξ½Ξ± ΞµΞ»Ξ­Ξ³ΞΎΞµΞΉΟ‚"
+						+ " ΞΏΟΞΈΞΏΞ³ΟΞ±Ο†ΞΉΞΊΞ¬ Ξ­Ξ½Ξ± Ξ±ΟΟ‡ΞµΞ―ΞΏ Ο„Ξ·Ο‚ ΞµΟ€ΞΉΞ»ΞΏΞ³Ξ®Ο‚ ΟƒΞΏΟ…:\n");
 
 				selection = input.nextInt();
 				System.out.println();
 				while ((selection != 1) && (selection != 2)) {
-					System.out.print("Παρακαλώ πληκτρολογήστε 1 ή 2\n");
+					System.out.print("Ξ Ξ±ΟΞ±ΞΊΞ±Ξ»Ο Ο€Ξ»Ξ·ΞΊΟ„ΟΞΏΞ»ΞΏΞ³Ξ®ΟƒΟ„Ξµ 1 Ξ® 2\n");
 					selection = input.nextInt();
 					System.out.println();
 				}
 				if (selection == 1) {
-					System.out.println("Πληκτρολόγησε ένα κείμενο στα "
-							+ "ελληνικά και θα ελέγξουμε άμα είναι "
-							+ "ορθογραφικά σωστό:\n\n");
+					System.out.println("Ξ Ξ»Ξ·ΞΊΟ„ΟΞΏΞ»ΟΞ³Ξ·ΟƒΞµ Ξ­Ξ½Ξ± ΞΊΞµΞ―ΞΌΞµΞ½ΞΏ ΟƒΟ„Ξ± "
+							+ "ΞµΞ»Ξ»Ξ·Ξ½ΞΉΞΊΞ¬ ΞΊΞ±ΞΉ ΞΈΞ± ΞµΞ»Ξ­Ξ³ΞΎΞΏΟ…ΞΌΞµ Ξ¬ΞΌΞ± ΞµΞ―Ξ½Ξ±ΞΉ "
+							+ "ΞΏΟΞΈΞΏΞ³ΟΞ±Ο†ΞΉΞΊΞ¬ ΟƒΟ‰ΟƒΟ„Ο:\n\n");
 				} else {
-					System.out.println("Πληκτρολόγησε το path που "
-							+ "βρίσκεται το αρχείο και θα ελέγξουμε "
-							+ "άμα είναι ορθογραφικά σωστό:\n");
+					System.out.println("Ξ Ξ»Ξ·ΞΊΟ„ΟΞΏΞ»ΟΞ³Ξ·ΟƒΞµ Ο„ΞΏ path Ο€ΞΏΟ… "
+							+ "Ξ²ΟΞ―ΟƒΞΊΞµΟ„Ξ±ΞΉ Ο„ΞΏ Ξ±ΟΟ‡ΞµΞ―ΞΏ ΞΊΞ±ΞΉ ΞΈΞ± ΞµΞ»Ξ­Ξ³ΞΎΞΏΟ…ΞΌΞµ "
+							+ "Ξ¬ΞΌΞ± ΞµΞ―Ξ½Ξ±ΞΉ ΞΏΟΞΈΞΏΞ³ΟΞ±Ο†ΞΉΞΊΞ¬ ΟƒΟ‰ΟƒΟ„Ο:\n");
 				}
 			} else if (language == 2) {
 				System.out.println("Press 1 if you want to test the "
