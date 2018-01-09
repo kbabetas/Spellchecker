@@ -23,9 +23,35 @@
     </dependency>
   </dependencies>
 
-<reporting>
+  <reporting>
       <plugins>
-<plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-checkstyle-plugin</artifactId>
+          <version>2.17</version>
+          <reportSets>
+            <reportSet>
+              <reports>
+                <report>checkstyle</report>
+              </reports>
+            </reportSet>
+          </reportSets>
+	</plugin>
+
+	<plugin>
+	  <groupId>org.apache.maven.plugins</groupId>
+	  <artifactId>maven-jxr-plugin</artifactId>
+          <version>2.3</version>
+	</plugin>
+
+	<plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>findbugs-maven-plugin</artifactId>
+          <version>3.0.6-SNAPSHOT</version>
+     	</plugin>
+
+	<plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>findbugs-maven-plugin</artifactId>
           <version>3.0.6-SNAPSHOT</version>
@@ -33,24 +59,50 @@
           </configuration>
         </plugin>
       </plugins>
-</reporting>
+  </reporting>
 
+  <build>
+      <finalName>Spellchecker</finalName>
+      <plugins>
+	      
+	<plugin>
+	   <groupId>org.apache.maven.plugins</groupId>
+	   <artifactId>maven-jar-plugin</artifactId>
+	   <version>2.4</version>
+	   <configuration>
+	      <archive>
+		 <manifest>
+		     <mainClass>gr.aueb.dmst.dirtybits.Menu</mainClass>
+		 </manifest>
+	      </archive>
+	   </configuration>
+        </plugin>
+	      
+        <plugin>
+           <groupId>org.apache.maven.plugins</groupId>
+           <artifactId>maven-compiler-plugin</artifactId>
+           <version>3.3</version>
+           <configuration>
+             <compilerId>javac-with-errorprone</compilerId>
+             <forceJavacCompilerUse>true</forceJavacCompilerUse>
+             <source>7</source>
+             <target>7</target>
+           </configuration>
+           <dependencies>
+             <dependency>
+                <groupId>org.codehaus.plexus</groupId>
+                <artifactId>plexus-compiler-javac-errorprone</artifactId>
+                <version>2.8</version>
+             </dependency>
+             <dependency>
+               <groupId>com.google.errorprone</groupId>
+               <artifactId>error_prone_core</artifactId>
+               <version>2.1.1</version>
+             </dependency>
+           </dependencies>
+        </plugin>
+	      
+   </plugins>
+  </build>
 
-<build>
-	<plugins>
-		<plugin>
-			<!-- Build an executable JAR -->
-			<groupId>org.apache.maven.plugins</groupId>
-			<artifactId>maven-jar-plugin</artifactId>
-			<version>2.4</version>
-			<configuration>
-				<archive>
-					<manifest>
-						<mainClass>gr.aueb.dmst.dirtybits.Menu</mainClass>
-					</manifest>
-				</archive>
-			</configuration>
-		</plugin>
-	</plugins>
-</build>
 </project>
